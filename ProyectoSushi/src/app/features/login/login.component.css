@@ -1,6 +1,3 @@
-<<<<<<< Updated upstream
-/* From Uiverse.io by 3bdel3ziz-T */ 
-=======
 html {
   height: 100%;
 }
@@ -30,8 +27,6 @@ body {
     );
     background-size: var(--s) calc(var(--s) * 0.577);
 }
-
->>>>>>> Stashed changes
 .card {
   --main-col: #ffeba7;
   --bg-col: #2a2b38;
