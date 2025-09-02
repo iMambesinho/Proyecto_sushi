@@ -1,19 +1,54 @@
+<<<<<<< Updated upstream
 /* From Uiverse.io by 3bdel3ziz-T */ 
+=======
+html {
+  height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    
+    --s: 200px;
+    --c1: #1d1d1d;
+    --c2: #4e4f51;
+    --c3: #3c3c3c;
+    background: repeating-conic-gradient(
+        from 30deg,
+        #0000 0 120deg,
+        var(--c3) 0 180deg
+    )
+    calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
+    repeating-conic-gradient(
+        from 30deg,
+        var(--c1) 0 60deg,
+        var(--c2) 0 120deg,
+        var(--c3) 0 180deg
+    );
+    background-size: var(--s) calc(var(--s) * 0.577);
+}
+
+>>>>>>> Stashed changes
 .card {
   --main-col: #ffeba7;
   --bg-col: #2a2b38;
   --bg-field: #1f2029;
 
-  width: 190px;
-  padding: 1.9rem 1.2rem;
+  display: grid;
+  place-items: center;
   text-align: center;
   background: var(--bg-col);
   border-radius: 10px;
   border: 1px solid var(--main-col);
   user-select: none;
+  margin-left: 40%;
+  margin-right: 40%;
+  margin-top: 10%;
 }
 
-/*Inputs*/
 .field {
   margin-top: 0.5rem;
   display: flex;
@@ -49,7 +84,7 @@
   border: 1px solid var(--main-col);
 }
 
-/*Text*/
+
 .title {
   margin-bottom: 1rem;
   font-size: 1.5em;
@@ -59,7 +94,6 @@
   text-transform: uppercase;
 }
 
-/*Buttons*/
 .btn {
   margin: 1rem;
   border: none;
