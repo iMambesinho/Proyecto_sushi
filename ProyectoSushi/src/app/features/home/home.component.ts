@@ -2,6 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
+interface Producto {
+  nombre: string;
+  descripcion: string;
+  precio: number;
+  imagenUrl: string;
+}
+
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -11,6 +18,27 @@ import { CommonModule } from '@angular/common';
 })
 export class HomeComponent implements OnInit {
   currentUser: any;
+  productos: Producto[] = [
+    {
+      nombre: 'Tabla 40 Mixta',
+      descripcion: '10 piezas panko pollo, 10 sésamo camarón, 10 queso salmón',
+      precio: 17990,
+      imagenUrl: 'assets/img/Tabla40.jpg'
+    },
+    {
+      nombre: 'Gohan de Salmón',
+      descripcion: 'Base de arroz con palta, queso crema, cebollín y sésamo',
+      precio: 7990,
+      imagenUrl: 'assets/img/GohanS.jpg'
+    },
+    {
+      nombre: 'Sushi Roll Especial',
+      descripcion: 'Rollo de salmón y palta con salsa especial',
+      precio: 10990,
+      imagenUrl: 'assets/img/SalmonP.jpg'
+    }
+    // Agrega más productos aquí
+  ];
 
   constructor(private router: Router) {}
 
@@ -29,10 +57,10 @@ export class HomeComponent implements OnInit {
   }
 
   goToProfile() {
-    alert('Función de perfil aún no implementada');
+    alert('Ir al perfil de ' + this.currentUser?.email);
   }
 
   goToCart() {
-    alert('Carrito aún no implementado');
+    alert('Ir al carrito de compras');
   }
 }
