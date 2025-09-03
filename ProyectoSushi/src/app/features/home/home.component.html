@@ -1,15 +1,17 @@
-<div class="container">
-  <div class="bg-image"></div>
-  <div class="bg-side">
-    <img src="../../../../assets/img/Logo.png" alt="Logo" class="logo" />
+<header class="navbar">
+  <div class="brand">Default</div>
 
-    <div class="card">
-      <h2 class="title">Bienvenido, {{ currentUser?.email }}</h2>
-      <p>Esta es tu página principal</p>
+  <nav class="nav-center">
+    <button class="nav-btn">Home</button>
+    <button class="nav-btn">Promociones</button>
+    <button class="nav-btn">Tablas</button>
+  </nav>
 
-      <div class="actions">
-        <button class="btn" (click)="logout()">Cerrar sesión</button>
-      </div>
-    </div>
+  <div class="user-actions">
+    <button class="nav-btn" (click)="goToProfile()">Hi, {{ currentUser?.email }}</button>
+    <button class="nav-btn" (click)="logout()">Cerrar sesión</button>
   </div>
+</header>
+
+<div class="home-content">
 </div>

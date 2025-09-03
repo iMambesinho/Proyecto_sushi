@@ -27,4 +27,12 @@ export class HomeComponent implements OnInit {
     localStorage.removeItem('currentUser');
     this.router.navigate(['/login']);
   }
+
+  goToProfile() {
+    alert('Función de perfil aún no implementada');
+  }
+
+  goToCart() {
+    alert('Carrito aún no implementado');
+  }
 }
