@@ -36,8 +36,49 @@ export class HomeComponent implements OnInit {
       descripcion: 'Rollo de salmón y palta con salsa especial',
       precio: 10990,
       imagenUrl: 'assets/img/SalmonP.jpg'
-    }
-    // Agrega más productos aquí
+    },
+    {
+    nombre: 'Tabla 30 Hot',
+      descripcion: '10 piezas envueltas en panko, relleno con pollo, queso crema y palta. 10 piezas en vueltas en panko, relleno de camarón, queso crema y cebollín. 10 piezas envuelto en panko, relleno con kanikama, queso crema y cebollin,2unaguis,1soya',
+      precio: 17990,
+      imagenUrl: 'assets/img/Tabla40.jpg'
+    },
+    {
+      nombre: 'Tabla 30 Mixta',
+      descripcion: 'Rollo de salmón y palta con salsa especial',
+      precio: 10990,
+      imagenUrl: 'assets/img/SalmonP.jpg'
+    },
+    {
+      nombre: 'Tabla 50 Hot',
+      descripcion: 'Rollo de salmón y palta con salsa especial',
+      precio: 10990,
+      imagenUrl: 'assets/img/SalmonP.jpg'
+    },
+    {
+      nombre: 'Tabla 60 Mixta',
+      descripcion: 'Rollo de salmón y palta con salsa especial',
+      precio: 10990,
+      imagenUrl: 'assets/img/SalmonP.jpg'
+    },
+    {
+      nombre: 'Tabla Vegetariana 30 Mixta',
+      descripcion: 'Rollo de salmón y palta con salsa especial',
+      precio: 10990,
+      imagenUrl: 'assets/img/SalmonP.jpg'
+    },
+    {
+      nombre: 'Tabla 80 Mixta',
+      descripcion: 'Rollo de salmón y palta con salsa especial',
+      precio: 10990,
+      imagenUrl: 'assets/img/SalmonP.jpg'
+    },
+    {
+      nombre: 'Tabla 100 Mixta',
+      descripcion: 'Rollo de salmón y palta con salsa especial',
+      precio: 10990,
+      imagenUrl: 'assets/img/SalmonP.jpg'
+    },
   ];
 
   constructor(private router: Router) {}
