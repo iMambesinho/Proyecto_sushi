@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule], // ✅ Aquí va ReactiveFormsModule
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
@@ -20,23 +20,31 @@ export class LoginComponent {
     });
   }
 
-  onSubmit() {
-    const users = JSON.parse(localStorage.getItem('users') || '[]');
-    const user = users.find((u: { email: string; password: string }) => 
-      u.email === this.form.value.email && u.password === this.form.value.password
-    );
+  get email(): FormControl {
+    return this.form.get('email') as FormControl;
+  }
 
-    if (user) {
-      localStorage.setItem('currentUser', JSON.stringify(user));
-      this.router.navigate(['/home']);
-    } else {
-      alert('Correo o contraseña incorrectos');
+  get password(): FormControl {
+    return this.form.get('password') as FormControl;
+  }
+
+  onSubmit() {
+    if (this.form.valid) {
+      const users = JSON.parse(localStorage.getItem('users') || '[]');
+      const user = users.find((u: { email: string; password: string }) =>
+        u.email === this.email.value && u.password === this.password.value
+      );
+
+      if (user) {
+        localStorage.setItem('currentUser', JSON.stringify(user));
+        this.router.navigate(['/home']);
+      } else {
+        alert('Correo o contraseña incorrectos');
+      }
     }
   }
 
-  // ✅ La función debe estar dentro de la clase
   goToRegister() {
     this.router.navigate(['/register']);
   }
 }
-
