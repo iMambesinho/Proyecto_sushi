@@ -4,3 +4,9 @@ html, body {
   height: 100%;
   background-color: #000; /* fondo negro absoluto */
 }
+
+.bg-image {
+  flex: 8;
+  background: url("assets/img/Login.jpg") no-repeat center center;
+  background-size: cover;
+  }
