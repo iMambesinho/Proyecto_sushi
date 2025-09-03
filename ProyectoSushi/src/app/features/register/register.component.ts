@@ -1,25 +1,36 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; // ← agregar esto
+import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [CommonModule, FormsModule], // ← agregar FormsModule aquí
+  imports: [CommonModule, FormsModule],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  username = '';
+  email = '';
+  confirmEmail = '';
   password = '';
 
   constructor(private router: Router) {}
 
   register() {
+    if (this.email !== this.confirmEmail) {
+      alert('Los correos electrónicos no coinciden');
+      return;
+    }
+
     const users = JSON.parse(localStorage.getItem('users') || '[]');
-    users.push({ username: this.username, password: this.password });
+    users.push({ email: this.email, password: this.password });
     localStorage.setItem('users', JSON.stringify(users));
+    alert('Registro exitoso');
+    this.router.navigate(['/login']);
+  }
+
+  goToLogin() {
     this.router.navigate(['/login']);
   }
 }
