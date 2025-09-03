@@ -5,11 +5,13 @@ import { HomeComponent } from './features/home/home.component';
 import { PromocionesComponent } from './features/promociones/promociones.component';
 import { TablasComponent } from './features/tablas/tablas.component';
 import { CarritoComponent } from './features/carrito/carrito.component';
+import { SplashComponent } from './features/splash/splash.component';
 
 
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
+  { path: 'splash', component: SplashComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'home', component: HomeComponent },
   { path: 'promociones', component: PromocionesComponent },

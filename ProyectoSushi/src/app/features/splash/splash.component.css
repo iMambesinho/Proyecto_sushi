@@ -1,0 +1,20 @@
+.splash-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1e1e1e; 
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.percentage {
+  font-size: 24px;
+  font-weight: bold;
+  color: #c9c9c9;
+}

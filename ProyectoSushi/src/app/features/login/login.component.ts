@@ -37,7 +37,7 @@ export class LoginComponent {
 
       if (user) {
         localStorage.setItem('currentUser', JSON.stringify(user));
-        this.router.navigate(['/home']);
+        this.router.navigate(['/splash']);
       } else {
         alert('Correo o contraseña incorrectos');
       }
