@@ -1,37 +1,41 @@
+
 <header class="navbar">
-  <div class="brand">Default</div>
+  <div class="brand" (click)="goHome()">Default</div>
 
   <nav class="nav-center">
-    <button class="nav-btn" routerLink="/home">Home</button>
-    <button class="nav-btn" routerLink="/promociones">Promociones</button>
-    <button class="nav-btn" routerLink="/tablas">Tablas</button>
+    <button class="nav-btn" (click)="goHome()">Home</button>
+    <button class="nav-btn" (click)="goPromociones()">Promociones</button>
+    <button class="nav-btn" (click)="goTablas()">Tablas</button>
   </nav>
 
   <div class="user-actions">
-    <button class="nav-btn" (click)="router.navigate(['/home'])">Hi, {{ currentUser?.email }}</button>
-    <button class="nav-btn" (click)="router.navigate(['/carrito'])">🛒 Carrito</button>
-    <button class="nav-btn" (click)="router.navigate(['/login'])">Cerrar sesión</button>
+    <button class="nav-btn" (click)="goToProfile()">Hi, {{ currentUser?.email }}</button>
+    <button class="nav-btn cart-btn" (click)="goToCart()">🛒 Carrito</button>
+    <button class="nav-btn" (click)="logout()">Cerrar sesión</button>
   </div>
 </header>
 
-<div class="menu-container">
-  <h2 class="menu-title">Carrito de Compras</h2>
+<div class="carrito-container">
+  <h2 class="carrito-title">Carrito de Compras</h2>
 
-  <div *ngIf="carrito.length === 0">
-    <p>Tu carrito está vacío.</p>
+  <div *ngIf="carrito.length === 0" class="empty-cart">
+    No hay productos en el carrito
   </div>
 
-  <div class="product-grid" *ngIf="carrito.length > 0">
-    <div class="product-card" *ngFor="let item of carrito; let i = index">
-      <img [src]="item.imagenUrl" alt="{{ item.nombre }}" class="product-img" />
-      <div class="product-info">
-        <h3 class="product-name">{{ item.nombre }}</h3>
-        <p class="product-desc">{{ item.descripcion }}</p>
-        <span class="product-price">${{ item.precio }}</span>
-        <button class="nav-btn" (click)="quitarProducto(i)">Quitar</button>
+  <div class="carrito-list" *ngIf="carrito.length > 0">
+    <div class="carrito-producto" *ngFor="let item of carrito; let i = index">
+      <img [src]="item.imagenUrl" alt="{{ item.nombre }}" class="producto-img" />
+      <div class="producto-info">
+        <h3 class="producto-nombre">{{ item.nombre }}</h3>
+        <p class="producto-desc">{{ item.descripcion }}</p>
+        <span class="producto-precio">${{ item.precio }}</span>
+        <button class="btn-eliminar" (click)="eliminarProducto(i)">Eliminar</button>
       </div>
     </div>
-  </div>
 
-  <button class="nav-btn" *ngIf="carrito.length > 0" (click)="vaciarCarrito()">Vaciar Carrito</button>
+    <div class="carrito-actions">
+      <button class="btn-vaciar" (click)="vaciarCarrito()">Vaciar Carrito</button>
+    </div>
+  </div>
 </div>
+
