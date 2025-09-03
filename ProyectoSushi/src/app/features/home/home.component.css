@@ -8,26 +8,26 @@
 }
 
 .navbar {
-  position: relative; /* Necesario para que el logo se posicione relativo a la barra */
+  position: relative; 
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #2a2b38;
   padding: 10px 20px;
   border-bottom: 2px solid #ffeba7;
-  height: 30px; /* Fijas la altura de la barra para que no se agrande */
+  height: 30px; 
 }
 .logo-img {
   position: absolute;
-  top: -20px;     /* Mueve el logo hacia arriba, sobresaliendo */
-  left: 20px;     /* Ajusta la distancia desde el borde izquierdo */
-  height: 100px;   /* Controla el tamaño del logo */
+  top: -20px;     
+  left: 20px;     
+  height: 100px;  
   width: auto;
   cursor: pointer;
-  z-index: 10;    /* Para asegurarse que quede por encima */
+  z-index: 10;    
 }
 .brand {
-  position: relative; /* Mantiene clickeable el div si lo usas */
+  position: relative;
 }
 
 .nav-center {
