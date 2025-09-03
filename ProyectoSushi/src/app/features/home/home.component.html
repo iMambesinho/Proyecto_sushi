@@ -1,5 +1,7 @@
 <header class="navbar">
-  <div class="brand" (click)="goHome()">Default</div>
+  <div class="brand" (click)="goHome()">
+    <img src="assets/img/Logo.png" alt="Logo del local" class="logo-img">
+  </div>
 
   <nav class="nav-center">
     <button class="nav-btn" (click)="goHome()">Home</button>
@@ -9,9 +11,7 @@
 
   <div class="user-actions">
     <button class="nav-btn" (click)="goToProfile()">Hi, {{ currentUser?.email }}</button>
-    <button class="nav-btn cart-btn" (click)="goToCart()">
-      🛒 Carrito
-    </button>
+    <button class="nav-btn cart-btn" (click)="goToCart()">🛒 Carrito</button>
     <button class="nav-btn" (click)="logout()">Cerrar sesión</button>
   </div>
 </header>

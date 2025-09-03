@@ -1,6 +1,6 @@
 :host {
   display: block;
-  font-family: sans-serif;
+  font-family: "Cinzel", serif;
   background-color: #121212;
   color: #fff;
   min-height: 100vh;
@@ -9,26 +9,35 @@
 
 
 .navbar {
+  position: relative; 
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #2a2b38;
   padding: 10px 20px;
   border-bottom: 2px solid #ffeba7;
+  height: 30px; 
+}
+.logo-img {
+  position: absolute;
+  top: -20px;     
+  left: 20px;     
+  height: 100px;   
+  width: auto;
+  cursor: pointer;
+  z-index: 10;    
+}
+.brand {
+  position: relative; 
 }
 
-.brand {
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #ffeba7;
-}
 
 .nav-center {
   display: flex;
   gap: 15px;
   flex: 1;
   justify-content: center;
-  margin-left: 300px;
+  margin-left: 380px;
 }
 
 .user-actions {

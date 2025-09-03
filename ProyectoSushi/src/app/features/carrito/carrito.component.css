@@ -1,6 +1,6 @@
 :host {
   display: block;
-  font-family: sans-serif;
+  font-family: "Cinzel", serif;
   background-color: #121212;
   color: #fff;
   min-height: 100vh;
@@ -8,19 +8,26 @@
 }
 
 .navbar {
+  position: relative; /* Necesario para que el logo se posicione relativo a la barra */
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #2a2b38;
   padding: 10px 20px;
   border-bottom: 2px solid #ffeba7;
+  height: 30px; /* Fijas la altura de la barra para que no se agrande */
 }
-
-.brand {
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #ffeba7;
+.logo-img {
+  position: absolute;
+  top: -20px;     /* Mueve el logo hacia arriba, sobresaliendo */
+  left: 20px;     /* Ajusta la distancia desde el borde izquierdo */
+  height: 100px;   /* Controla el tamaño del logo */
+  width: auto;
   cursor: pointer;
+  z-index: 10;    /* Para asegurarse que quede por encima */
+}
+.brand {
+  position: relative; /* Mantiene clickeable el div si lo usas */
 }
 
 .nav-center {
@@ -28,7 +35,7 @@
   gap: 15px;
   flex: 1;
   justify-content: center;
-  margin-left: 300px;
+  margin-left: 380px;
 }
 
 .user-actions {
