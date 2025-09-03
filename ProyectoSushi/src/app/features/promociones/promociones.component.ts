@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 interface Producto {
   nombre: string;
@@ -10,14 +10,15 @@ interface Producto {
 }
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-promociones',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  templateUrl: './promociones.component.html',
+  styleUrls: ['./promociones.component.css']
 })
-export class HomeComponent implements OnInit {
+export class PromocionesComponent implements OnInit {
   currentUser: any;
+
   productos: Producto[] = [
     {
       nombre: 'Tabla 40 Mixta',
@@ -101,16 +102,19 @@ export class HomeComponent implements OnInit {
     alert('Ir al perfil de ' + this.currentUser?.email);
   }
 
+  goHome() {
+    this.router.navigate(['/home']);
+  }
+
+  goPromociones() {
+    this.router.navigate(['/promociones']);
+  }
+
+  goTablas() {
+    this.router.navigate(['/tablas']);
+  }
   goToCart() {
     alert('Ir al carrito de compras');
   }
-  goHome() {
-  this.router.navigate(['/home']);
-  }
-  goPromociones() {
-  this.router.navigate(['/promociones']);
-  }
-  goTablas() {
-  this.router.navigate(['/tablas']);
-  }
 }
+
