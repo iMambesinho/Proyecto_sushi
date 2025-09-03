@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'  // Esto hace que Angular lo inyecte automáticamente
+  providedIn: 'root'
 })
 export class CarritoService {
 

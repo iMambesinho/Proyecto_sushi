@@ -114,10 +114,10 @@
 }
 
 .product-info {
-  flex: 1; /* Hace que ocupe todo el espacio disponible */
+  flex: 1; 
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Separa descripción arriba y precio+botón abajo */
+  justify-content: space-between;
   padding: 1rem;
 }
 
@@ -139,7 +139,7 @@
   margin-bottom: 10px;
 }
 .product-footer {
-  margin-top: auto; /* Esto empuja el bloque hacia abajo */
+  margin-top: auto; 
 }
 .add-cart-btn {
   margin-top: 15px;
