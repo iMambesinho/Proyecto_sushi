@@ -24,8 +24,19 @@ export class RegisterComponent {
     }
 
     const users = JSON.parse(localStorage.getItem('users') || '[]');
+
+    // Verifica si el correo ya está registrado
+    const exists = users.some((u: { email: string; password: string }) => u.email === this.email);
+
+    if (exists) {
+      alert('Este correo ya está registrado');
+      return;
+    }
+
+    // Guarda el usuario en LocalStorage
     users.push({ email: this.email, password: this.password });
     localStorage.setItem('users', JSON.stringify(users));
+
     alert('Registro exitoso');
     this.router.navigate(['/login']);
   }

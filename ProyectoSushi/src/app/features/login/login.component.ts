@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -20,27 +20,23 @@ export class LoginComponent {
     });
   }
 
-  // Función que se ejecuta al enviar el formulario
   onSubmit() {
-    if (this.form.valid) {
-      const { email, password } = this.form.value;
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+    const user = users.find((u: { email: string; password: string }) => 
+      u.email === this.form.value.email && u.password === this.form.value.password
+    );
 
-      // Obtener usuarios registrados desde localStorage
-      const users = JSON.parse(localStorage.getItem('users') || '[]');
-      const user = users.find((u: any) => u.email === email && u.password === password);
-
-      if (user) {
-        // Guardar usuario logeado
-        localStorage.setItem('currentUser', JSON.stringify(user));
-        this.router.navigate(['/home']); // Redirige a la página principal
-      } else {
-        alert('Email o contraseña incorrectos');
-      }
+    if (user) {
+      localStorage.setItem('currentUser', JSON.stringify(user));
+      this.router.navigate(['/home']);
+    } else {
+      alert('Correo o contraseña incorrectos');
     }
   }
 
-  // Función para ir a la página de registro
+  // ✅ La función debe estar dentro de la clase
   goToRegister() {
     this.router.navigate(['/register']);
   }
 }
+
