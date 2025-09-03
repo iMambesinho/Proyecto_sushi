@@ -89,6 +89,9 @@
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
   transition: transform 0.3s ease;
   max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  
 }
 
 .product-card:hover {
@@ -102,6 +105,10 @@
 }
 
 .product-info {
+  flex: 1; /* Hace que ocupe todo el espacio disponible */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Separa descripción arriba y precio+botón abajo */
   padding: 1rem;
 }
 
@@ -120,9 +127,13 @@
   font-size: 1rem;
   font-weight: bold;
   color: #ffcc00;
+  margin-bottom: 10px;
+}
+.product-footer {
+  margin-top: auto; /* Esto empuja el bloque hacia abajo */
 }
 .add-cart-btn {
-  margin-top: 10px;
+  margin-top: 15px;
   width: 100%;
   background-color: #ffeba7;
   color: #2a2b38;
