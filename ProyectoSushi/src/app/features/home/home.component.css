@@ -7,7 +7,6 @@
   margin: 0;
 }
 
-/* Barra superior */
 .navbar {
   display: flex;
   align-items: center;
@@ -28,7 +27,7 @@
   gap: 15px;
   flex: 1;
   justify-content: center;
-  margin-left: 200px;
+  margin-left: 300px;
 }
 
 .user-actions {
@@ -52,8 +51,6 @@
   color: #2a2b38;
 }
 
-
-/* Menú de productos */
 .menu-container {
   padding: 2rem;
   text-align: center;
