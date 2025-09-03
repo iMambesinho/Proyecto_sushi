@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { CarritoService } from '../carrito/carrito.service'; // Ajusta la ruta según tu estructura
+
 
 interface Producto {
   nombre: string;
@@ -81,8 +83,12 @@ export class HomeComponent implements OnInit {
     }
   ];
 
-  constructor(private router: Router) {}
-
+  constructor(private router: Router, private carritoService: CarritoService) {}
+  
+  agregarAlCarrito(producto: Producto) {
+  this.carritoService.agregar(producto, this.currentUser.email);
+  alert(`${producto.nombre} agregado al carrito`);
+}
   ngOnInit() {
     const user = localStorage.getItem('currentUser');
     if (!user) {
@@ -102,7 +108,7 @@ export class HomeComponent implements OnInit {
   }
 
   goToCart() {
-    alert('Ir al carrito de compras');
+  this.router.navigate(['/carrito']);
   }
   goHome() {
   this.router.navigate(['/home']);

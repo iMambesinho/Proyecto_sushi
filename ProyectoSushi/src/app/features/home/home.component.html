@@ -26,6 +26,9 @@
         <h3 class="product-name">{{ item.nombre }}</h3>
         <p class="product-desc">{{ item.descripcion }}</p>
         <span class="product-price">${{ item.precio }}</span>
+        <button class="nav-btn add-cart-btn" (click)="agregarAlCarrito(item)">
+      🛒 Agregar al Carrito
+    </button>
       </div>
     </div>
   </div>

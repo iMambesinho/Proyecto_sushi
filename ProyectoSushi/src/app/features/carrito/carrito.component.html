@@ -1,1 +1,37 @@
-<p>carrito works!</p>
+<header class="navbar">
+  <div class="brand">Default</div>
+
+  <nav class="nav-center">
+    <button class="nav-btn" routerLink="/home">Home</button>
+    <button class="nav-btn" routerLink="/promociones">Promociones</button>
+    <button class="nav-btn" routerLink="/tablas">Tablas</button>
+  </nav>
+
+  <div class="user-actions">
+    <button class="nav-btn" (click)="router.navigate(['/home'])">Hi, {{ currentUser?.email }}</button>
+    <button class="nav-btn" (click)="router.navigate(['/carrito'])">🛒 Carrito</button>
+    <button class="nav-btn" (click)="router.navigate(['/login'])">Cerrar sesión</button>
+  </div>
+</header>
+
+<div class="menu-container">
+  <h2 class="menu-title">Carrito de Compras</h2>
+
+  <div *ngIf="carrito.length === 0">
+    <p>Tu carrito está vacío.</p>
+  </div>
+
+  <div class="product-grid" *ngIf="carrito.length > 0">
+    <div class="product-card" *ngFor="let item of carrito; let i = index">
+      <img [src]="item.imagenUrl" alt="{{ item.nombre }}" class="product-img" />
+      <div class="product-info">
+        <h3 class="product-name">{{ item.nombre }}</h3>
+        <p class="product-desc">{{ item.descripcion }}</p>
+        <span class="product-price">${{ item.precio }}</span>
+        <button class="nav-btn" (click)="quitarProducto(i)">Quitar</button>
+      </div>
+    </div>
+  </div>
+
+  <button class="nav-btn" *ngIf="carrito.length > 0" (click)="vaciarCarrito()">Vaciar Carrito</button>
+</div>

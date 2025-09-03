@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { CarritoService } from '../carrito/carrito.service';
 
 interface Producto {
   nombre: string;
@@ -21,68 +22,73 @@ export class PromocionesComponent implements OnInit {
 
   productos: Producto[] = [
     {
-      nombre: 'Tabla 40 Mixta',
-      descripcion: '10 piezas panko pollo, 10 sésamo camarón, 10 queso salmón',
-      precio: 17990,
-      imagenUrl: 'assets/img/Tabla40.jpg'
+      nombre: 'Hand Roll de Pollo, Queso, Palta (2x1)',
+      descripcion: 'Incluye Soya o Unagi',
+      precio: 5600,
+      imagenUrl: 'assets/img/Hand Roll de Pollo.jpg'
     },
     {
-      nombre: 'Gohan de Salmón',
-      descripcion: 'Base de arroz con palta, queso crema, cebollín y sésamo',
-      precio: 7990,
-      imagenUrl: 'assets/img/GohanS.jpg'
+      nombre: 'Hand Roll de Pollo, Queso, Cebollín (2x1)',
+      descripcion: 'Incluye Soya o Unagi',
+      precio: 5600,
+      imagenUrl: 'assets/img/Hand Roll de Pollo.jpg'
     },
     {
-      nombre: 'Sushi Roll Especial',
-      descripcion: 'Rollo de salmón y palta con salsa especial',
+      nombre: 'Hand Roll de Pimentón, Cebollín, Palta (2x1)',
+      descripcion: 'Incluye Soya o Unagi',
+      precio: 5600,
+      imagenUrl: 'assets/img/Hand Roll de Pollo.jpg'
+    },
+    {
+    nombre: 'Hand Roll de Pimentón, Queso, Aceitunas (2x1)',
+      descripcion: 'Incluye Soya o Unagi',
+      precio: 5600,
+      imagenUrl: 'assets/img/Hand Roll de Pollo.jpg'
+    },
+    {
+      nombre: 'Hand Roll de Champiñón, Queso, Pimentón (2x1)',
+      descripcion: 'Incluye Soya o Unagi',
+      precio: 5600,
+      imagenUrl: 'assets/img/Hand Roll de Pollo.jpg'
+    },
+    {
+      nombre: '2 Hand Rolls a elección',
+      descripcion: 'Incluye Soya o Unagi',
+      precio: 9000,
+      imagenUrl: 'assets/img/Hand Roll de Pollo.jpg'
+    },
+    {
+      nombre: 'Pizza Pepperoni Parmesano',
+      descripcion: 'Salsa di Pomodoro, queso, orégano, pepperoni y parmesano',
       precio: 10990,
-      imagenUrl: 'assets/img/SalmonP.jpg'
+      imagenUrl: 'assets/img/Pizza Queso.jpg'
     },
     {
-    nombre: 'Tabla 30 Hot',
-      descripcion: '10 piezas envueltas en panko, relleno con pollo, queso crema y palta. 10 piezas en vueltas en panko, relleno de camarón, queso crema y cebollín. 10 piezas envuelto en panko, relleno con kanikama, queso crema y cebollin,2unaguis,1soya',
-      precio: 17990,
-      imagenUrl: 'assets/img/Tabla40.jpg'
+      nombre: 'Sushi + Gyosa + Bebida',
+      descripcion: 'Tabla de 40 cortes, 10 Cheese Pollo, palta, 10 Sésamo Camarón, queso, cebollín 10 Ciboulette Palmito, queso, palta 10 Panko Kanikama, queso, cebollín + 5 Gyozas + Bebida. Incluye soya o unagi',
+      precio: 26300,
+      imagenUrl: 'assets/img/Gyosas.jpg'
     },
     {
-      nombre: 'Tabla 30 Mixta',
-      descripcion: 'Rollo de salmón y palta con salsa especial',
-      precio: 10990,
-      imagenUrl: 'assets/img/SalmonP.jpg'
+      nombre: 'Combo Mix',
+      descripcion: 'Papas Fritas - Ración de 500 grs, Nuggets de Pollo - Ración de 12 unidades, Empanaditas de Queso - Ración de 5 unidades, Aros de Cebolla - Ración de 5 unidades, GRATIS - Bebida de Lata Lata 350 ml.',
+      precio: 20600,
+      imagenUrl: 'assets/img/ComboMix.jpeg'
     },
     {
-      nombre: 'Tabla 50 Hot',
-      descripcion: 'Rollo de salmón y palta con salsa especial',
-      precio: 10990,
-      imagenUrl: 'assets/img/SalmonP.jpg'
-    },
-    {
-      nombre: 'Tabla 60 Mixta',
-      descripcion: 'Rollo de salmón y palta con salsa especial',
-      precio: 10990,
-      imagenUrl: 'assets/img/SalmonP.jpg'
-    },
-    {
-      nombre: 'Tabla Vegetariana 30 Mixta',
-      descripcion: 'Rollo de salmón y palta con salsa especial',
-      precio: 10990,
-      imagenUrl: 'assets/img/SalmonP.jpg'
-    },
-    {
-      nombre: 'Tabla 80 Mixta',
-      descripcion: 'Rollo de salmón y palta con salsa especial',
-      precio: 10990,
-      imagenUrl: 'assets/img/SalmonP.jpg'
-    },
-    {
-      nombre: 'Tabla 100 Mixta',
-      descripcion: 'Rollo de salmón y palta con salsa especial',
-      precio: 10990,
-      imagenUrl: 'assets/img/SalmonP.jpg'
+      nombre: 'Pizza + Empanada + Bebida',
+      descripcion: 'Pizza familiar con Salsa di Pomodoro, queso, orégano, 3 ingredientes a elección + Ración de Empanaditas + Bebida.',
+      precio: 21800,
+      imagenUrl: 'assets/img/ComboPizza.jpg'
     }
   ];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private carritoService: CarritoService) {}
+  
+  agregarAlCarrito(producto: Producto) {
+  this.carritoService.agregar(producto, this.currentUser.email);
+  alert(`${producto.nombre} agregado al carrito`);
+}
 
   ngOnInit() {
     const user = localStorage.getItem('currentUser');
@@ -114,7 +120,7 @@ export class PromocionesComponent implements OnInit {
     this.router.navigate(['/tablas']);
   }
   goToCart() {
-    alert('Ir al carrito de compras');
+  this.router.navigate(['/carrito']);
   }
 }
 

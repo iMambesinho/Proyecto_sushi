@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 
-@Injectable({ providedIn: 'root' })
-export class CarritoComponent {
+@Injectable({
+  providedIn: 'root'  // Esto hace que Angular lo inyecte automáticamente
+})
+export class CarritoService {
+
   agregar(producto: any, userEmail: string) {
     const key = `cart_${userEmail}`;
     const saved = localStorage.getItem(key);

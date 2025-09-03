@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { CarritoService } from '../carrito/carrito.service';
 
 interface Producto {
   nombre: string;
@@ -21,68 +22,73 @@ export class TablasComponent implements OnInit {
 
   productos: Producto[] = [
     {
-      nombre: 'Tabla 40 Mixta',
-      descripcion: '10 piezas panko pollo, 10 sésamo camarón, 10 queso salmón',
-      precio: 17990,
-      imagenUrl: 'assets/img/Tabla40.jpg'
-    },
-    {
-      nombre: 'Gohan de Salmón',
-      descripcion: 'Base de arroz con palta, queso crema, cebollín y sésamo',
-      precio: 7990,
-      imagenUrl: 'assets/img/GohanS.jpg'
-    },
-    {
-      nombre: 'Sushi Roll Especial',
-      descripcion: 'Rollo de salmón y palta con salsa especial',
-      precio: 10990,
-      imagenUrl: 'assets/img/SalmonP.jpg'
-    },
-    {
-    nombre: 'Tabla 30 Hot',
-      descripcion: '10 piezas envueltas en panko, relleno con pollo, queso crema y palta. 10 piezas en vueltas en panko, relleno de camarón, queso crema y cebollín. 10 piezas envuelto en panko, relleno con kanikama, queso crema y cebollin,2unaguis,1soya',
-      precio: 17990,
+      nombre: 'Tabla 25 Mixta',
+      descripcion: '10 Ciboulette: palmito, queso, palta 10 Panko: pollo, queso, cebollín 5 Gyozas de pollo. Incluye palitos, soya o unagi',
+      precio: 12990,
       imagenUrl: 'assets/img/Tabla40.jpg'
     },
     {
       nombre: 'Tabla 30 Mixta',
-      descripcion: 'Rollo de salmón y palta con salsa especial',
-      precio: 10990,
-      imagenUrl: 'assets/img/SalmonP.jpg'
+      descripcion: '10 Queso: pollo, palta 10 Ciboulette: palmito, queso, palta 10 Panko: Champiñón, queso, pimentón. Incluye palitos, soya o unagi',
+      precio: 14990,
+      imagenUrl: 'assets/img/Tabla40.jpg'
     },
     {
-      nombre: 'Tabla 50 Hot',
-      descripcion: 'Rollo de salmón y palta con salsa especial',
-      precio: 10990,
-      imagenUrl: 'assets/img/SalmonP.jpg'
+      nombre: 'Tabla 40 Mixta',
+      descripcion: '10 Queso: pollo, palta 10 Ciboulette: palmito, queso, palta 10 Panko: champiñón, queso, pimentón 10 Panko: kanikama, queso, cebollín. Incluye palitos, soya o unagi',
+      precio: 18990,
+      imagenUrl: 'assets/img/Tabla40.jpg'
+    },
+    {
+    nombre: 'Tabla 50 Mixta',
+      descripcion: '10 Queso: pollo, palta 10 Ciboulette: palmito, queso, palta 10 Sésamo: Camarón, queso, cebollín 10 Panko: champiñón, queso, pimentón 10 Panko: kanikama, queso, cebollín. Incluye palitos, soya o unagi',
+      precio: 21990,
+      imagenUrl: 'assets/img/Tabla40.jpg'
     },
     {
       nombre: 'Tabla 60 Mixta',
-      descripcion: 'Rollo de salmón y palta con salsa especial',
-      precio: 10990,
-      imagenUrl: 'assets/img/SalmonP.jpg'
+      descripcion: '10 Queso: pollo, palta 10 Ciboulette: palmito, queso, palta 10 Sésamo: Camarón, queso, cebollín 10 Palta: pollo, queso, cebollín 10 Panko: champiñón, queso, pimentón 10 Panko: kanikama, queso, cebollín. Incluye palitos, soya o unagi',
+      precio: 24990,
+      imagenUrl: 'assets/img/Tabla40.jpg'
     },
     {
-      nombre: 'Tabla Vegetariana 30 Mixta',
-      descripcion: 'Rollo de salmón y palta con salsa especial',
-      precio: 10990,
-      imagenUrl: 'assets/img/SalmonP.jpg'
+      nombre: 'Tabla 70 Hot',
+      descripcion: '10 Queso: pollo, palta 10 Ciboulette: palmito, queso, palta 10 Sésamo: Camarón, queso, cebollín 10 Palta: pollo, queso, cebollín 10 Panko: champiñón, queso, pimentón 10 Panko: kanikama, queso, cebollín 10 Panko: pollo, queso, pimentón. Incluye palitos, soya o unagi',
+      precio: 27990,
+      imagenUrl: 'assets/img/Tabla40.jpg'
     },
     {
       nombre: 'Tabla 80 Mixta',
-      descripcion: 'Rollo de salmón y palta con salsa especial',
-      precio: 10990,
-      imagenUrl: 'assets/img/SalmonP.jpg'
+      descripcion: '10 Queso: pollo, palta 10 Ciboulette: palmito, queso, palta 10 Sésamo: Camarón, queso, cebollín 10 Palta: pollo, queso, cebollín 10 Nori: Choclito, queso, palta 10 Panko: champiñón, queso, pimentón 10 Panko: kanikama, queso, cebollín 10 Panko: pollo, queso, pimentón. Incluye palitos, soya o unagi',
+      precio: 31990,
+      imagenUrl: 'assets/img/Tabla40.jpg'
     },
     {
       nombre: 'Tabla 100 Mixta',
-      descripcion: 'Rollo de salmón y palta con salsa especial',
-      precio: 10990,
-      imagenUrl: 'assets/img/SalmonP.jpg'
+      descripcion: '10 Queso: pollo, palta 10 Ciboulette: palmito, queso, palta 10 Sésamo: Camarón, queso, cebollín 10 Palta: pollo, queso, cebollín 10 Nori: choclito, queso, palta 10 Panko: champiñón, queso, pimentón 10 Panko: kanikama, queso, cebollín 10 Panko: pollo, queso, pimentón 10 Korokkes de pollo 5 Gyozas de camarón 5 Gyozas de pollo. Incluye palitos, soya o unagi',
+      precio: 39990,
+      imagenUrl: 'assets/img/Tabla40.jpg'
+    },
+    {
+      nombre: 'Tabla Vegetariana 25 Mixta',
+      descripcion: '10 Queso: choclito, palta 10 Ciboulette: palmito, queso, palta 5 Gyozas de verdura. Incluye palitos, soya o unagi',
+      precio: 13990,
+      imagenUrl: 'assets/img/Tabla40.jpg'
+    },
+    {
+      nombre: 'Tabla Vegetariana 40 Mixta',
+      descripcion: '10 Queso: choclito, palta 10 Ciboulette: palmito, queso, palta 10 Panko: champiñón, queso, pimentón 10 Panko: Aceituna, queso, cebollín. Incluye palitos, soya o unagi',
+      precio: 18990,
+      imagenUrl: 'assets/img/Tabla40.jpg'
     }
   ];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private carritoService: CarritoService) {}
+
+  agregarAlCarrito(producto: Producto) {
+  this.carritoService.agregar(producto, this.currentUser.email);
+  alert(`${producto.nombre} agregado al carrito`);
+}
 
   ngOnInit() {
     const user = localStorage.getItem('currentUser');
@@ -115,6 +121,7 @@ export class TablasComponent implements OnInit {
     
   }
   goToCart() {
-    alert('Ir al carrito de compras');
+  this.router.navigate(['/carrito']);
   }
+
 }
