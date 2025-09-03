@@ -16,27 +16,26 @@ html, body {
   width: 100%;
 }
 
-/* 70% izquierda - imagen */
+
 .bg-image {
   flex: 8;
-  background-image: url('/assets/img/Login.jpg'); /* tu imagen */
+  background-image: url('/assets/img/Login.jpg'); 
   background-size: cover;
   background-position: center;
 }
 
-/* 30% derecha - fondo plomo */
 .bg-side {
   flex: 3;
   background-color: #282828;
   display: flex;
-  justify-content: center; /* centra la card horizontalmente */
-  align-items: center;     /* centra la card verticalmente */
+  justify-content: center; 
+  align-items: center;     
   padding: 0 20px;
 }
 .right-content {
   display: flex;
-  flex-direction: column; /* logo arriba, card abajo */
-  align-items: center;    /* centra horizontalmente los elementos */
+  flex-direction: column; 
+  align-items: center;   
 }
 .logo {
   width: 150px;
@@ -117,16 +116,16 @@ html, body {
 }
 
 .btn-link {
-  background: none;       /* sin fondo */
-  border: none;           /* sin borde */
-  color: #ffffff;         /* color del texto */
+  background: none;       
+  border: none;           
+  color: #ffffff;         
   display: block;
   font-size: 0.75em;
   transition: color 0.3s ease-out;
   margin-top: 0.5rem;
-  cursor: pointer;        /* que aparezca la mano al pasar el mouse */
-  text-decoration: none;  /* sin subrayado inicial */
-  padding: 0;             /* quita padding por defecto */
+  cursor: pointer;       
+  text-decoration: none;  
+  padding: 0;             
 }
 
 .btn-link:hover {

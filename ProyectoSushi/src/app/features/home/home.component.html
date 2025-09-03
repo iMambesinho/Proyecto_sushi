@@ -1,2 +1,15 @@
-<h1>Bienvenido a la página principal</h1>
-<p>Usuario: {{ currentUser?.username }}</p>
+<div class="container">
+  <div class="bg-image"></div>
+  <div class="bg-side">
+    <img src="../../../../assets/img/Logo.png" alt="Logo" class="logo" />
+
+    <div class="card">
+      <h2 class="title">Bienvenido, {{ currentUser?.email }}</h2>
+      <p>Esta es tu página principal</p>
+
+      <div class="actions">
+        <button class="btn" (click)="logout()">Cerrar sesión</button>
+      </div>
+    </div>
+  </div>
+</div>

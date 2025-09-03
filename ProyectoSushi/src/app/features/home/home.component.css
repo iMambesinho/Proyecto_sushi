@@ -1,0 +1,90 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.bg-image {
+  flex: 7;
+  background: url('/assets/img/Login.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.bg-side {
+  flex: 3;
+  background-color: #282828;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 50px;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+.card {
+  --main-col: #ffeba7;
+  --bg-col: #2a2b38;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background: var(--bg-col);
+  border-radius: 10px;
+  border: 1px solid var(--main-col);
+  width: 320px;
+  max-width: 90%;
+  padding: 2rem 1.5rem;
+  gap: 1rem;
+  box-shadow: 0 0 20px rgba(255, 235, 167, 0.1);
+  margin-top: 25px;
+}
+
+.title {
+  margin-bottom: 1rem;
+  font-size: 1.5em;
+  font-weight: 500;
+  color: var(--main-col);
+  text-shadow: 1px 1px 20px var(--main-col);
+  text-transform: uppercase;
+}
+
+.actions {
+  margin-top: 20px;
+}
+
+.btn {
+  margin: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  padding: 0.6em 1.2em;
+  background-color: var(--main-col);
+  color: var(--bg-col);
+  box-shadow: 0 8px 24px 0 rgb(255 235 167 / 20%);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #1f2029;
+  color: var(--main-col);
+  box-shadow: 0 8px 24px 0 rgb(16 39 112 / 20%);
+}
