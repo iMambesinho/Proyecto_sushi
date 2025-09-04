@@ -43,7 +43,8 @@ export class CarritoComponent implements OnInit {
   vaciarCarrito() {
     this.carritoService.vaciar(this.currentUser.email);
     this.carrito = [];
-  } // Botones de navegación y acciones de usuario
+  } 
+  // Botones de navegación y acciones de usuario
   goHome() { this.router.navigate(['/home']); }
   goPromociones() { this.router.navigate(['/promociones']); }
   goTablas() { this.router.navigate(['/tablas']); }
