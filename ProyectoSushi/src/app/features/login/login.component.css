@@ -1,23 +1,22 @@
-:host {
+:host { 
   display: block;
   height: 100%;
 }
 
-html, body {
+html, body { 
   margin: 0;
   padding: 0;
   height: 100%;
   font-family: sans-serif;
 }
 
-.container {
+.container { /*Utiliza toda la pantalla (login y fondo)*/
   display: flex;
   height: 100vh;
   width: 100%;
 }
 
-
-.bg-side {
+.bg-side { /* Posición del login */
   flex: 3;
   background-color: #282828;
   display: flex;
@@ -26,13 +25,14 @@ html, body {
   justify-content: flex-start;
   padding-top: 50px;  
 }
-.logo {
+
+.logo { /* Posición del logo */
   width: 150px;
   height: auto;
   margin-bottom: 30px;
 }
 
-.card {
+.card { /* Recuadro contenedor del login */
   --main-col: #ffeba7;
   --bg-col: #2a2b38;
   --bg-field: #1f2029;
@@ -85,7 +85,7 @@ html, body {
   caret-color: var(--main-col);
 }
 
-.field:has(.input-field:valid) {
+.field:has(.input-field:valid) { 
   border: 1px solid var(--main-col);
 }
 
