@@ -1,14 +1,14 @@
 
-// Importa los decoradores y la interfaz para crear un componente y usar el ciclo de vida OnInit de Angular
+/* Importa los decoradores y la interfaz para crear un componente y usar el ciclo de vida OnInit de Angular */ 
 import { Component, OnInit } from '@angular/core';
 
-// Importa el módulo común de Angular, que incluye directivas como ngIf y ngFor
+/* Importa el módulo común de Angular, que incluye directivas como ngIf y ngFor */ 
 import { CommonModule } from '@angular/common';
 
-// Importa el servicio personalizado para manejar la lógica del carrito de compras
+/* Importa el servicio personalizado para manejar la lógica del carrito de compras */ 
 import { CarritoService } from './carrito.service';
 
-// Importa el servicio de enrutamiento para navegar entre páginas
+/* Importa el servicio de enrutamiento para navegar entre páginas */ 
 import { Router } from '@angular/router';
 
 @Component({
@@ -20,11 +20,11 @@ import { Router } from '@angular/router';
 })
 export class CarritoComponent implements OnInit {
   currentUser: any;
-  carrito: any[] = []; // Array para almacenar los productos en el carrito
+  carrito: any[] = []; /* Array para almacenar los productos en el carrito */ 
 
   constructor(private carritoService: CarritoService, private router: Router) {}
 
-  ngOnInit() { // Verifica si el usuario está autenticado al iniciar el componente
+  ngOnInit() { /* Verifica si el usuario está autenticado al iniciar el componente */ 
     const user = localStorage.getItem('currentUser'); 
     if (!user) {
       this.router.navigate(['/login']);
@@ -44,7 +44,7 @@ export class CarritoComponent implements OnInit {
     this.carritoService.vaciar(this.currentUser.email);
     this.carrito = [];
   } 
-  // Botones de navegación y acciones de usuario
+  /* Botones de navegación y acciones de usuario */ 
   goHome() { this.router.navigate(['/home']); }
   goPromociones() { this.router.navigate(['/promociones']); }
   goTablas() { this.router.navigate(['/tablas']); }
