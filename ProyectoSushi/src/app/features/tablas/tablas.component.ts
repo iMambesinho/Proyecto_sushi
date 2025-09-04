@@ -82,7 +82,7 @@ export class TablasComponent implements OnInit {
       imagenUrl: 'assets/img/Tabla40.jpg'
     }
   ];
-
+  
   constructor(private router: Router, private carritoService: CarritoService) {}
 
   agregarAlCarrito(producto: Producto) {
@@ -118,13 +118,14 @@ export class TablasComponent implements OnInit {
 
   goTablas() {
     this.router.navigate(['/tablas']);
-    
   }
+
   goToCart() {
-  this.router.navigate(['/carrito']);
+    this.router.navigate(['/carrito']);
   }
-    goProfiles(){
-  this.router.navigate(['/profiles']);
+
+  goProfiles(){
+    this.router.navigate(['/profiles']);
   }  
 
 }
