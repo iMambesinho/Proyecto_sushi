@@ -6,6 +6,7 @@ import { PromocionesComponent } from './features/promociones/promociones.compone
 import { TablasComponent } from './features/tablas/tablas.component';
 import { CarritoComponent } from './features/carrito/carrito.component';
 import { SplashComponent } from './features/splash/splash.component';
+import { ProfileComponent } from './features/profile/profile.component';
 
 
 export const routes: Routes = [
@@ -14,6 +15,7 @@ export const routes: Routes = [
   { path: 'splash', component: SplashComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'profile', component: ProfileComponent },
   { path: 'promociones', component: PromocionesComponent },
   { path: 'tablas', component: TablasComponent },
   { path: 'carrito', component: CarritoComponent }

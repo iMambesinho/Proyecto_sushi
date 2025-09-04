@@ -122,5 +122,8 @@ export class PromocionesComponent implements OnInit {
   goToCart() {
   this.router.navigate(['/carrito']);
   }
+  goProfiles(){
+  this.router.navigate(['/profiles']);
+  }  
 }
 

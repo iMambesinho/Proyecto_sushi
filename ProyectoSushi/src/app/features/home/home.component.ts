@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { CarritoService } from '../carrito/carrito.service'; // Ajusta la ruta según tu estructura
-
+import { CarritoService } from '../carrito/carrito.service'; 
 
 interface Producto {
   nombre: string;
@@ -119,4 +118,7 @@ export class HomeComponent implements OnInit {
   goTablas() {
   this.router.navigate(['/tablas']);
   }
+  goProfiles(){
+  this.router.navigate(['/profiles']);
+  }  
 }

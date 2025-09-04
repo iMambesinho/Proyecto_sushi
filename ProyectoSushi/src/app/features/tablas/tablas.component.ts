@@ -123,5 +123,8 @@ export class TablasComponent implements OnInit {
   goToCart() {
   this.router.navigate(['/carrito']);
   }
+    goProfiles(){
+  this.router.navigate(['/profiles']);
+  }  
 
 }

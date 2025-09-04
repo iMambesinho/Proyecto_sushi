@@ -43,6 +43,9 @@ export class CarritoComponent implements OnInit {
   goToProfile() { alert('Ir al perfil de ' + this.currentUser?.email); }
   goToCart() { this.router.navigate(['/carrito']); }
   logout() { localStorage.removeItem('currentUser'); this.router.navigate(['/login']); }
+    goProfiles(){
+  this.router.navigate(['/profiles']);
+  }  
 
   
 }
