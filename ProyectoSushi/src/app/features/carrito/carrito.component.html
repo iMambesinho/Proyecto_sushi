@@ -2,23 +2,23 @@
   <div class="brand" (click)="goHome()">
     <img src="assets/img/Logo.png" alt="Logo del local" class="logo-img">
   </div>
-
+    <!-- Botones centrales superiores para ir a home, promociones y tablas respectivamente -->
   <nav class="nav-center">
-    <button class="nav-btn" (click)="goHome()">Home</button>
+    <button class="nav-btn" (click)="goHome()">Home</button> 
     <button class="nav-btn" (click)="goPromociones()">Promociones</button>
-    <button class="nav-btn" (click)="goTablas()">Tablas</button>
+    <button class="nav-btn" (click)="goTablas()">Tablas</button>                
   </nav>
-
+<!-- Botones esq superior derecha para ir a perfil, carrito y cerrar sesion -->
   <div class="user-actions">
     <button class="nav-btn" (click)="goToProfile()">Hi, {{ currentUser?.email }}</button>
     <button class="nav-btn cart-btn" (click)="goToCart()">🛒 Carrito</button>
     <button class="nav-btn" (click)="logout()">Cerrar sesión</button>
   </div>
 </header>
-
+<!-- Carrito de compras -->
 <div class="carrito-container">
   <h2 class="carrito-title">Carrito de Compras</h2>
-
+  <!-- Mensaje que se muestra con el carrito vacío -->
   <div *ngIf="carrito.length === 0" class="empty-cart">
     No hay productos en el carrito
   </div>
@@ -30,12 +30,12 @@
         <h3 class="producto-nombre">{{ item.nombre }}</h3>
         <p class="producto-desc">{{ item.descripcion }}</p>
         <span class="producto-precio">${{ item.precio }}</span>
-        <button class="btn-eliminar" (click)="eliminarProducto(i)">Eliminar</button>
+        <button class="btn-eliminar" (click)="eliminarProducto(i)">Eliminar</button> <!-- Boton para eliminar producto del carrito -->
       </div>
     </div>
 
     <div class="carrito-actions">
-      <button class="btn-vaciar" (click)="vaciarCarrito()">Vaciar Carrito</button>
+      <button class="btn-vaciar" (click)="vaciarCarrito()">Vaciar Carrito</button> <!-- Botón para vaciar carrito -->
     </div>
   </div>
 </div>
