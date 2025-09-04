@@ -1,3 +1,4 @@
+/* Estilos generales del componente carrito */
 :host {
   display: block;
   font-family: "Cinzel", serif;
@@ -7,6 +8,7 @@
   margin: 0;
 }
 
+/* Barra de navegación superior */
 .navbar {
   position: relative; 
   display: flex;
@@ -17,6 +19,7 @@
   border-bottom: 2px solid #ffeba7;
   height: 30px; 
 }
+/* Logo de la marca en la barra de navegación */
 .logo-img {
   position: absolute;
   top: -20px;     
@@ -26,10 +29,12 @@
   cursor: pointer;
   z-index: 10;   
 }
+/* Contenedor de la marca */
 .brand {
   position: relative; 
 }
 
+/* Centro de la barra de navegación (enlaces, etc.) */
 .nav-center {
   display: flex;
   gap: 15px;
@@ -38,11 +43,13 @@
   margin-left: 380px;
 }
 
+/* Acciones de usuario (botones de login, perfil, etc.) */
 .user-actions {
   display: flex;
   gap: 10px;
 }
 
+/* Botones de la barra de navegación */
 .nav-btn {
   background: transparent;
   border: 1px solid #ffeba7;
@@ -54,22 +61,26 @@
   transition: 0.2s;
 }
 
+/* Efecto hover para los botones de la barra de navegación */
 .nav-btn:hover {
   background-color: #ffeba7;
   color: #2a2b38;
 }
 
+/* Contenedor principal del carrito */
 .carrito-container {
   padding: 2rem;
   text-align: center;
 }
 
+/* Título del carrito */
 .carrito-title {
   font-size: 2rem;
   margin-bottom: 1.5rem;
   font-weight: 600;
 }
 
+/* Lista de productos en el carrito */
 .carrito-list {
   display: flex;
   flex-direction: column;
@@ -77,6 +88,7 @@
   align-items: center;
 }
 
+/* Estilo de cada producto en el carrito */
 .carrito-producto {
   display: flex;
   gap: 1rem;
@@ -88,6 +100,7 @@
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
 }
 
+/* Imagen del producto en el carrito */
 .producto-img {
   width: 150px;
   height: 100px;
@@ -95,6 +108,7 @@
   border-radius: 8px;
 }
 
+/* Información del producto (nombre, descripción, precio) */
 .producto-info {
   display: flex;
   flex-direction: column;
@@ -102,24 +116,28 @@
   flex: 1;
 }
 
+/* Nombre del producto */
 .producto-nombre {
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 6000;
   margin-bottom: 0.5rem;
 }
 
+/* Descripción del producto */
 .producto-desc {
   font-size: 0.9rem;
   color: #ccc;
   margin-bottom: 0.5rem;
 }
 
+/* Precio del producto */
 .producto-precio {
   font-size: 1rem;
   font-weight: bold;
   color: #ffcc00;
 }
 
+/* Botones para eliminar un producto o vaciar el carrito */
 .btn-eliminar,
 .btn-vaciar {
   background-color: #ff4d4f;
@@ -132,17 +150,20 @@
   font-weight: bold;
 }
 
+/* Efecto hover para los botones de eliminar y vaciar */
 .btn-eliminar:hover,
 .btn-vaciar:hover {
   background-color: #ff7875;
 }
 
+/* Mensaje de carrito vacío */
 .empty-cart {
   font-size: 1.2rem;
   color: #ccc;
   margin-top: 2rem;
 }
 
+/* Acciones del carrito (como vaciar o finalizar compra) */
 .carrito-actions {
   margin-top: 2rem;
 }
