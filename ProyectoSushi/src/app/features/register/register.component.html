@@ -1,30 +1,30 @@
-<div class="container">
-  <div class="bg-image"></div>
+<div class="container"> <!-- Contenedor principal de la página -->
+  <div class="bg-image"></div> <!-- Imagen de fondo a la izquierda -->
 
-  <div class="bg-side">
-    <div class="right-content">
-      <img src="../../../../assets/img/Logo.png" alt="Logo" class="logo" />
+  <div class="bg-side"> <!-- Panel lateral derecho -->
+    <div class="right-content"> <!-- Contenido centrado verticalmente -->
+      <img src="../../../../assets/img/Logo.png" alt="Logo" class="logo" /> <!-- Logo principal -->
 
-      <div class="card">
-        <h2 class="title">Registro</h2>
+      <div class="card"> <!-- Tarjeta del formulario de registro -->
+        <h2 class="title">Registro</h2> <!-- Título del formulario -->
 
         <div class="field">
           <input type="email" class="input-field" placeholder="Correo electrónico"
-            [(ngModel)]="email" name="email" required />
+            [(ngModel)]="email" name="email" required /> <!-- Campo correo -->
         </div>
 
         <div class="field">
           <input type="email" class="input-field" placeholder="Re-ingrese correo electrónico"
-            [(ngModel)]="confirmEmail" name="confirmEmail" required />
+            [(ngModel)]="confirmEmail" name="confirmEmail" required /> <!-- Campo confirmar correo -->
         </div>
 
         <div class="field">
           <input type="password" class="input-field" placeholder="Contraseña"
-            [(ngModel)]="password" name="password" required />
+            [(ngModel)]="password" name="password" required /> <!-- Campo contraseña -->
         </div>
 
-        <button class="btn" (click)="register()">Registrar</button>
-        <button class="btn-link" (click)="goToLogin()">¿Ya tienes cuenta? Ingresar</button>
+        <button class="btn" (click)="register()">Registrar</button> <!-- Botón registrar -->
+        <button class="btn-link" (click)="goToLogin()">¿Ya tienes cuenta? Ingresar</button> <!-- Botón ir a login -->
       </div>
     </div>
   </div>

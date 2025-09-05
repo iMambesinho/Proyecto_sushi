@@ -1,30 +1,30 @@
-:host {
+:host {   /* Contenedor principal del componente */
   display: block;
   height: 100%;
 }
 
-html, body {
+html, body { /* Estilos base de la página */
   margin: 0;
   padding: 0;
   height: 100%;
   font-family: sans-serif;
 }
 
-.container {
+.container { /* Contenedor general con layout flex */
   display: flex;
   height: 100vh;
   width: 100%;
 }
 
 
-.bg-image {
+.bg-image {  /* Fondo con imagen a la izquierda */
   flex: 8;
   background-image: url('/assets/img/Login.jpg'); 
   background-size: cover;
   background-position: center;
 }
 
-.bg-side {
+.bg-side { /* Panel lateral derecho con fondo oscuro */
   flex: 3;
   background-color: #282828;
   display: flex;
@@ -32,17 +32,17 @@ html, body {
   align-items: center;     
   padding: 0 20px;
 }
-.right-content {
+.right-content {  /* Contenido centrado verticalmente */
   display: flex;
   flex-direction: column; 
   align-items: center;   
 }
-.logo {
+.logo { /* Logo principal */
   width: 150px;
   height: auto;
   margin-bottom: 30px;
 }
-.card {
+.card {  /* Tarjeta principal del formulario */
   --main-col: #ffeba7;
   --bg-col: #2a2b38;
   --bg-field: #1f2029;
@@ -64,7 +64,7 @@ html, body {
   margin-top: 25px;
 }
 
-.field {
+.field {  /* Campo de entrada de datos */
   margin-top: 0.5rem;
   display: flex;
   align-items: center;
@@ -75,7 +75,7 @@ html, body {
   border-radius: 4px;
 }
 
-.input-field {
+.input-field {  /* Input principal del formulario */
   background: transparent;
   border: none;
   outline: none;
@@ -85,7 +85,7 @@ html, body {
   caret-color: var(--main-col);
 }
 
-.title {
+.title { /* Título del formulario */
   margin-bottom: 1rem;
   font-size: 1.5em;
   font-weight: 500;
@@ -94,7 +94,7 @@ html, body {
   text-transform: uppercase;
 }
 
-.btn {
+.btn {  /* Botón principal */
   margin: 1rem;
   border: none;
   border-radius: 4px;
@@ -109,13 +109,13 @@ html, body {
   cursor: pointer;
 }
 
-.btn:hover {
+.btn:hover { /* Efecto hover en botón */
   background-color: var(--bg-field);
   color: var(--main-col);
   box-shadow: 0 8px 24px 0 rgb(16 39 112 / 20%);
 }
 
-.btn-link {
+.btn-link {  /* Botón de enlace secundario */
   background: none;       
   border: none;           
   color: #ffffff;         
@@ -128,7 +128,7 @@ html, body {
   padding: 0;             
 }
 
-.btn-link:hover {
+.btn-link:hover { /* Efecto hover en botón de enlace */
   color: var(--main-col);
   text-decoration: underline;
 }
