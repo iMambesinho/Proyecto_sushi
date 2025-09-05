@@ -54,7 +54,7 @@ html, body {
   margin-top: px;
 }
 
-.field {
+.field { /* Campos de texto para usuario y contraseña */
   margin-top: 0.5rem;
   display: flex;
   align-items: center;
@@ -65,7 +65,7 @@ html, body {
   border-radius: 4px;
 }
 
-.input-icon {
+.input-icon {/* Iconos dentro de los campos de texto */
   width: 1em;
   color: var(--main-col);
   fill: var(--main-col);
@@ -75,7 +75,7 @@ html, body {
   justify-content: center;
 }
 
-.input-field {
+.input-field {/* Estilo de los campos de texto */
   background: transparent;
   border: none;
   outline: none;
@@ -85,11 +85,11 @@ html, body {
   caret-color: var(--main-col);
 }
 
-.field:has(.input-field:valid) { 
+.field:has(.input-field:valid) { /* Efecto al escribir en los campos de texto */
   border: 1px solid var(--main-col);
 }
 
-.title {
+.title { /* Título del login */
   margin-bottom: 1rem;
   font-size: 1.5em;
   font-weight: 500;
@@ -98,7 +98,7 @@ html, body {
   text-transform: uppercase;
 }
 
-.btn {
+.btn { /* Estilo del botón de iniciar sesión */
   margin: 1rem;
   border: none;
   border-radius: 4px;
@@ -113,25 +113,25 @@ html, body {
   cursor: pointer;
 }
 
-.btn-link {
+.btn-link { /* Estilo y posición del enlace de "¿Olvidaste tu contraseña?" */
   color: #000000;
   display: block;
   font-size: 0.75em;
   transition: color 0.3s ease-out;
 }
 
-.field input:focus::placeholder {
+.field input:focus::placeholder { /* Efecto al escribir en los campos de texto */
   opacity: 0;
   transition: opacity 0.3s;
 }
 
-.btn:hover {
+.btn:hover { /* Efecto al pasar el cursor sobre el botón */
   background-color: var(--bg-field);
   color: var(--main-col);
   box-shadow: 0 8px 24px 0 rgb(16 39 112 / 20%);
 }
 
-.btn-link:hover {
+.btn-link:hover { /* Efecto al pasar el cursor sobre el enlace */
   color: var(--main-col);
   text-decoration: underline;
 }
