@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
-import { CarritoService } from '../carrito/carrito.service';
+import { Component, OnInit } from '@angular/core'; // Importa decorador y ciclo de vida
+import { CommonModule } from '@angular/common'; // Importa módulo común de Angular
+import { Router } from '@angular/router';      // Importa servicio de rutas
+import { CarritoService } from '../carrito/carrito.service';  // Servicio para el carrito
 
-interface Producto {
+interface Producto { // Define la estructura de un producto
   nombre: string;
   descripcion: string;
   precio: number;
@@ -11,16 +11,16 @@ interface Producto {
 }
 
 @Component({
-  selector: 'app-promociones',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './promociones.component.html',
-  styleUrls: ['./promociones.component.css']
+  selector: 'app-promociones', // Selector del componente
+  standalone: true, // Componente independiente
+  imports: [CommonModule],  // Importa módulo común
+  templateUrl: './promociones.component.html', // HTML principal
+  styleUrls: ['./promociones.component.css'] // CSS principal
 })
 export class PromocionesComponent implements OnInit {
-  currentUser: any;
+  currentUser: any; // Usuario actual
 
-  productos: Producto[] = [
+  productos: Producto[] = [ // Lista principal de productos en promoción
     {
       nombre: 'Hand Roll de Pollo, Queso, Palta (2x1)',
       descripcion: 'Incluye Soya o Unagi',
@@ -83,46 +83,46 @@ export class PromocionesComponent implements OnInit {
     }
   ];
 
-  constructor(private router: Router, private carritoService: CarritoService) {}
+  constructor(private router: Router, private carritoService: CarritoService) {} // Inyección de servicios principales
   
-  agregarAlCarrito(producto: Producto) {
+  agregarAlCarrito(producto: Producto) { // Agrega producto al carrito
   this.carritoService.agregar(producto, this.currentUser.email);
   alert(`${producto.nombre} agregado al carrito`);
 }
 
-  ngOnInit() {
+  ngOnInit() { // Inicializa el componente y verifica usuario
     const user = localStorage.getItem('currentUser');
     if (!user) {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/login']);  // Redirige si no hay usuario
     } else {
-      this.currentUser = JSON.parse(user);
+      this.currentUser = JSON.parse(user); // Asigna usuario actual
     }
   }
 
-  logout() {
+  logout() {   // Cierra sesión
     localStorage.removeItem('currentUser');
     this.router.navigate(['/login']);
   }
 
-  goToProfile() {
+  goToProfile() {  // Navega al perfil
     alert('Ir al perfil de ' + this.currentUser?.email);
   }
-
-  goHome() {
+ 
+  goHome() {   // Navega a Home
     this.router.navigate(['/home']);
   }
 
-  goPromociones() {
+  goPromociones() {   // Navega a Promociones
     this.router.navigate(['/promociones']);
   }
 
-  goTablas() {
+  goTablas() {   // Navega a Tablas
     this.router.navigate(['/tablas']);
   }
-  goToCart() {
+  goToCart() {  // Navega al carrito
   this.router.navigate(['/carrito']);
   }
-  goProfiles(){
+  goProfiles(){  // Navega a perfiles
   this.router.navigate(['/profiles']);
   }  
 }
