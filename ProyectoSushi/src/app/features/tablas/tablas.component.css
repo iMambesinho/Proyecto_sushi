@@ -1,4 +1,4 @@
-:host {
+:host { /* Estilos globales para el componente tablas */
   display: block;
   font-family: "Cinzel", serif;
   background-color: #121212;
@@ -7,7 +7,7 @@
   margin: 0;
 }
 
-.navbar {
+.navbar { /* Estilos para la barra de navegación */
   position: relative;
   display: flex;
   align-items: center;
@@ -17,7 +17,7 @@
   border-bottom: 2px solid #ffeba7;
   height: 30px; 
 }
-.logo-img {
+.logo-img { /* Estilos para la imagen del logo */
   position: absolute;
   top: -20px;    
   left: 20px;     
@@ -26,11 +26,11 @@
   cursor: pointer;
   z-index: 10;   
 }
-.brand {
+.brand { /* Estilos para el nombre de la marca */
   position: relative;
 }
 
-.nav-center {
+.nav-center { /* Estilos para el centro de navegación */
   display: flex;
   gap: 15px;
   flex: 1;
@@ -38,12 +38,12 @@
   margin-left: 380px;
 }
 
-.user-actions {
+.user-actions { /* Estilos para las acciones del usuario */
   display: flex;
   gap: 10px;
 }
 
-.nav-btn {
+.nav-btn { /* Estilos para los botones de navegación */
   background: transparent;
   border: 1px solid #ffeba7;
   border-radius: 4px;
@@ -54,30 +54,30 @@
   transition: 0.2s;
 }
 
-.nav-btn:hover {
+.nav-btn:hover { /* pasar el mouse sobre los botones de navegación */
   background-color: #ffeba7;
   color: #2a2b38;
 }
 
-.menu-container {
+.menu-container { /* Estilos para el contenedor del menú */
   padding: 2rem;
   text-align: center;
 }
 
-.menu-title {
+.menu-title { /* Estilos para el título del menú */
   font-size: 2rem;
   margin-bottom: 1.5rem;
   font-weight: 600;
 }
 
-.product-grid {
+.product-grid { /* Estilos para el grid de productos */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 1.5rem;
   justify-items: center;
 }
 
-.product-card {
+.product-card { /* Estilos para las tarjetas de productos */
   background-color: #1e1e1e;
   border-radius: 12px;
   overflow: hidden;
@@ -88,45 +88,47 @@
   flex-direction: column;
 }
 
-.product-card:hover {
+.product-card:hover { /* pasar el mouse sobre las tarjetas de productos */
   transform: scale(1.03);
 }
 
-.product-img {
+.product-img { /* Estilos para la imagen del producto */
   width: 100%;
   height: 180px;
   object-fit: cover;
 }
 
-.product-info {
+.product-info { /* Estilos para la información del producto */
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 1rem;
 }
-.product-footer {
+
+.product-footer { /* Estilos para el pie de la tarjeta del producto */
   margin-top: auto; 
 }
 
-.product-name {
+.product-name { /* Estilos para el nombre del producto */
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
 
-.product-desc {
+.product-desc { /* Estilos para la descripción del producto */
   font-size: 0.9rem;
   color: #ccc;
   margin-bottom: 0.5rem;
 }
 
-.product-price {
+.product-price { /* Estilos para el precio del producto */
   font-size: 1rem;
   font-weight: bold;
   color: #ffcc00;
   margin-bottom: 10px;
 }
-.add-cart-btn {
+
+.add-cart-btn { /* Estilos para el botón de agregar al carrito */
   margin-top: 10px;
   width: 100%;
   background-color: #ffeba7;
@@ -139,7 +141,7 @@
   transition: 0.2s;
 }
 
-.add-cart-btn:hover {
+.add-cart-btn:hover { /* pasar el mouse sobre el botón de agregar al carrito */
   background-color: #2a2b38;
   color: #ffeba7;
 }

@@ -1,26 +1,27 @@
+/* Angular imports */
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { CarritoService } from '../carrito/carrito.service';
 
-interface Producto {
+interface Producto { /* Interfaz para definir la estructura de un producto */
   nombre: string;
   descripcion: string;
   precio: number;
   imagenUrl: string;
 }
 
-@Component({
+@Component({ /* Decorador del componente */
   selector: 'app-tablas',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './tablas.component.html',
   styleUrls: ['./tablas.component.css']
 })
-export class TablasComponent implements OnInit {
+export class TablasComponent implements OnInit { /* Clase del componente */
   currentUser: any;
 
-  productos: Producto[] = [
+  productos: Producto[] = [ /* Array de productos */
     {
       nombre: 'Tabla 25 Mixta',
       descripcion: '10 Ciboulette: palmito, queso, palta 10 Panko: pollo, queso, cebollín 5 Gyozas de pollo. Incluye palitos, soya o unagi',
@@ -83,48 +84,48 @@ export class TablasComponent implements OnInit {
     }
   ];
   
-  constructor(private router: Router, private carritoService: CarritoService) {}
+  constructor(private router: Router, private carritoService: CarritoService) {} /* Inyección de dependencias para el router y el servicio de carrito */
 
-  agregarAlCarrito(producto: Producto) {
+  agregarAlCarrito(producto: Producto) { /* Método para agregar un producto al carrito */
   this.carritoService.agregar(producto, this.currentUser.email);
-  alert(`${producto.nombre} agregado al carrito`);
+  alert(`${producto.nombre} agregado al carrito`); /* Notificación al usuario */
 }
 
-  ngOnInit() {
+  ngOnInit() { /* Método que se ejecuta al inicializar el componente */
     const user = localStorage.getItem('currentUser');
     if (!user) {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/login']); /* Redirigir al login si no hay usuario */
     } else {
       this.currentUser = JSON.parse(user);
     }
   }
 
-  logout() {
+  logout() { /* Método para cerrar sesión */
     localStorage.removeItem('currentUser');
     this.router.navigate(['/login']);
   }
 
-  goToProfile() {
+  goToProfile() { /* Método para ir al perfil del usuario */
     alert('Ir al perfil de ' + this.currentUser?.email);
   }
 
-  goHome() {
+  goHome() { /* Método para ir a la página principal */
     this.router.navigate(['/home']);
   }
 
-  goPromociones() {
+  goPromociones() { /* Método para ir a la página de promociones */
     this.router.navigate(['/promociones']);
   }
 
-  goTablas() {
+  goTablas() { /* Método para ir a la página de tablas */
     this.router.navigate(['/tablas']);
   }
 
-  goToCart() {
+  goToCart() { /* Método para ir a la página del carrito */
     this.router.navigate(['/carrito']);
   }
 
-  goProfiles(){
+  goProfiles(){ /* Método para ir a la página de perfiles */
     this.router.navigate(['/profiles']);
   }  
 

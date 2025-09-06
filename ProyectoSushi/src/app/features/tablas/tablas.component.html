@@ -1,33 +1,33 @@
-<header class="navbar">
-  <div class="brand" (click)="goHome()">
-    <img src="assets/img/Logo.png" alt="Logo del local" class="logo-img">
+<header class="navbar"> <!-- Barra de navegación -->
+  <div class="brand" (click)="goHome()"> <!-- clase brand para el logo -->
+    <img src="assets/img/Logo.png" alt="Logo del local" class="logo-img"> <!-- Logo del local -->
   </div>
 
-  <nav class="nav-center">
-    <button class="nav-btn" (click)="goHome()">Home</button>
-    <button class="nav-btn" (click)="goPromociones()">Promociones</button>
-    <button class="nav-btn" (click)="goTablas()">Tablas</button>
+  <nav class="nav-center"> <!-- Navegación central -->
+    <button class="nav-btn" (click)="goHome()">Home</button> <!-- Botón Home -->
+    <button class="nav-btn" (click)="goPromociones()">Promociones</button> <!-- Botón Promociones -->
+    <button class="nav-btn" (click)="goTablas()">Tablas</button> <!-- Botón Tablas -->
   </nav>
 
-  <div class="user-actions">
-    <button class="nav-btn" (click)="goToProfile()">Hi, {{ currentUser?.email }}</button>
-    <button class="nav-btn cart-btn" (click)="goToCart()">🛒 Carrito</button>
-    <button class="nav-btn" (click)="logout()">Cerrar sesión</button>
+  <div class="user-actions"> <!-- Acciones de usuario -->
+    <button class="nav-btn" (click)="goToProfile()">Hi, {{ currentUser?.email }}</button> <!-- Mostrar email del usuario -->
+    <button class="nav-btn cart-btn" (click)="goToCart()">🛒 Carrito</button> <!-- carrito del usuario -->
+    <button class="nav-btn" (click)="logout()">Cerrar sesión</button> <!-- Cerrar sesión -->
   </div>
 </header>
 
-<div class="menu-container">
-  <h2 class="menu-title">Tablas</h2>
+<div class="menu-container"> <!-- Contenedor del menú -->
+  <h2 class="menu-title">Tablas</h2> <!-- clase menu-title para el título del menú -->
 
-  <div class="product-grid">
-    <div class="product-card" *ngFor="let item of productos">
-      <img [src]="item.imagenUrl" alt="{{ item.nombre }}" class="product-img" />
-      <div class="product-info">
-        <h3 class="product-name">{{ item.nombre }}</h3>
-        <p class="product-desc">{{ item.descripcion }}</p>
-        <div class="product-footer">
-        <span class="product-price">${{ item.precio }}</span>
-        <button class="nav-btn add-cart-btn" (click)="agregarAlCarrito(item)">
+  <div class="product-grid"> <!-- clase product-grid para la cuadrícula de productos -->
+    <div class="product-card" *ngFor="let item of productos"> <!-- clase product-card para cada tarjeta de producto -->
+      <img [src]="item.imagenUrl" alt="{{ item.nombre }}" class="product-img" /> <!-- clase product-img para la imagen del producto -->
+      <div class="product-info"> <!-- clase product-info para la información del producto -->
+        <h3 class="product-name">{{ item.nombre }}</h3> <!-- clase product-name para el nombre del producto -->
+        <p class="product-desc">{{ item.descripcion }}</p> <!-- clase product-desc para la descripción del producto -->
+        <div class="product-footer"> <!-- clase product-footer para el pie de la tarjeta del producto -->
+        <span class="product-price">${{ item.precio }}</span> <!-- clase product-price para el precio del producto -->
+        <button class="nav-btn add-cart-btn" (click)="agregarAlCarrito(item)"> <!-- clase add-cart-btn para el botón de agregar al carrito -->
       🛒 Agregar al Carrito
     </button>
       </div>
