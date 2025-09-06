@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { CarritoService } from '../carrito/carrito.service'; 
+import { Component, OnInit } from '@angular/core';  // Importa decorador y ciclo de vida principal
+import { Router } from '@angular/router'; // Servicio de navegación
+import { CommonModule } from '@angular/common'; // Módulo común de Angular
+import { CarritoService } from '../carrito/carrito.service';  // Servicio para el carrito
 
-interface Producto {
+interface Producto { // Estructura principal de un producto
   nombre: string;
   descripcion: string;
   precio: number;
@@ -11,15 +11,15 @@ interface Producto {
 }
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-home', // Selector del componente
+  standalone: true, // Componente independiente
+  imports: [CommonModule], // Importa módulo común
+  templateUrl: './home.component.html', // HTML principal
+  styleUrls: ['./home.component.css'] // CSS principal
 })
 export class HomeComponent implements OnInit {
-  currentUser: any;
-  productos: Producto[] = [
+  currentUser: any; // Usuario actual
+  productos: Producto[] = [ // Lista principal de productos
     {
       nombre: 'Tabla 40 Mixta',
       descripcion: '10 piezas panko pollo, 10 sésamo camarón, 10 queso salmón',
@@ -82,43 +82,43 @@ export class HomeComponent implements OnInit {
     }
   ];
 
-  constructor(private router: Router, private carritoService: CarritoService) {}
+  constructor(private router: Router, private carritoService: CarritoService) {} // Inyección de servicios principales
   
-  agregarAlCarrito(producto: Producto) {
+  agregarAlCarrito(producto: Producto) {  // Agrega producto al carrito
   this.carritoService.agregar(producto, this.currentUser.email);
   alert(`${producto.nombre} agregado al carrito`);
 }
-  ngOnInit() {
+  ngOnInit() { // Verifica si hay usuario logueado
     const user = localStorage.getItem('currentUser');
     if (!user) {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/login']); // Redirige si no hay usuario
     } else {
-      this.currentUser = JSON.parse(user);
+      this.currentUser = JSON.parse(user);  // Asigna usuario actual
     }
   }
 
-  logout() {
+  logout() {  // Cierra sesión
     localStorage.removeItem('currentUser');
     this.router.navigate(['/login']);
   }
 
-  goToProfile() {
+  goToProfile() { // Navega al perfil
     alert('Ir al perfil de ' + this.currentUser?.email);
   }
 
-  goToCart() {
+  goToCart() { // Navega al carrito
   this.router.navigate(['/carrito']);
   }
-  goHome() {
+  goHome() {  // Navega a Home
   this.router.navigate(['/home']);
   }
-  goPromociones() {
+  goPromociones() {  // Navega a Promociones
   this.router.navigate(['/promociones']);
   }
-  goTablas() {
+  goTablas() { // Navega a Tablas
   this.router.navigate(['/tablas']);
   }
-  goProfiles(){
+  goProfiles(){ // Navega a perfiles
   this.router.navigate(['/profiles']);
   }  
 }
