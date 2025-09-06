@@ -1,4 +1,4 @@
-.splash-container {
+.splash-container { /* contenedor principal del splash */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,13 +7,13 @@
   background-color: #1e1e1e; 
 }
 
-.logo {
+.logo { /* estilo del logo */
   width: 150px;
   height: auto;
   margin-bottom: 20px;
 }
 
-.percentage {
+.percentage { /* estilo del texto de porcentaje */
   font-size: 24px;
   font-weight: bold;
   color: #c9c9c9;
