@@ -1,34 +1,41 @@
-<header class="navbar">
-  <div class="brand" (click)="goHome()">
+<!-- Barra de navegación superior -->
+<header class="navbar">      
+  <!-- Logo posicionado arriba a la izquierda -->
+  <div class="brand" (click)="goHome()"> 
     <img src="assets/img/Logo.png" alt="Logo del local" class="logo-img">
   </div>
 
+  <!-- Menú de navegación centrado -->
   <nav class="nav-center">
     <button class="nav-btn" (click)="goHome()">Home</button>
     <button class="nav-btn" (click)="goPromociones()">Promociones</button>
     <button class="nav-btn" (click)="goTablas()">Tablas</button>
   </nav>
 
+  <!-- Acciones de usuario alineadas a la derecha -->
   <div class="user-actions">
     <button class="nav-btn" (click)="goToProfile()">Hi, {{ currentUser?.email }}</button>
     <button class="nav-btn cart-btn" (click)="goToCart()">🛒 Carrito</button>
     <button class="nav-btn" (click)="logout()">Cerrar sesión</button>
   </div>
 </header>
+<!-- Contenedor principal del menú de promociones -->
 <div class="menu-container">
-  <h2 class="menu-title">Promociones</h2>
+  <h2 class="menu-title">Promociones</h2><!-- Título principal -->
 
+  <!-- Grid de productos en promoción -->
   <div class="product-grid">
+    <!-- Tarjeta individual de producto -->
     <div class="product-card" *ngFor="let item of productos">
-      <img [src]="item.imagenUrl" alt="{{ item.nombre }}" class="product-img" />
+      <img [src]="item.imagenUrl" alt="{{ item.nombre }}" class="product-img" /><!-- Imagen del producto -->
       <div class="product-info">
-        <h3 class="product-name">{{ item.nombre }}</h3>
-        <p class="product-desc">{{ item.descripcion }}</p>
+        <h3 class="product-name">{{ item.nombre }}</h3> <!-- Nombre del producto -->
+        <p class="product-desc">{{ item.descripcion }}</p> <!-- Descripción del producto -->
         <div class="product-footer">
-        <span class="product-price">${{ item.precio }}</span>
+        <span class="product-price">${{ item.precio }}</span> <!-- Precio -->
         <button class="nav-btn add-cart-btn" (click)="agregarAlCarrito(item)">
       🛒 Agregar al Carrito
-    </button>
+    </button> <!-- Botón para agregar al carrito -->
       </div>
     </div>
   </div>
