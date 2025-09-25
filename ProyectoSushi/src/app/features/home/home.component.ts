@@ -1,124 +1,74 @@
-import { Component, OnInit } from '@angular/core';  // Importa decorador y ciclo de vida principal
-import { Router } from '@angular/router'; // Servicio de navegación
-import { CommonModule } from '@angular/common'; // Módulo común de Angular
-import { CarritoService } from '../carrito/carrito.service';  // Servicio para el carrito
-
-interface Producto { // Estructura principal de un producto
-  nombre: string;
-  descripcion: string;
-  precio: number;
-  imagenUrl: string;
-}
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { CarritoService } from '../carrito/carrito.service';
+import { ProductoService, Producto } from '../producto';
 
 @Component({
-  selector: 'app-home', // Selector del componente
-  standalone: true, // Componente independiente
-  imports: [CommonModule], // Importa módulo común
-  templateUrl: './home.component.html', // HTML principal
-  styleUrls: ['./home.component.css'] // CSS principal
+  selector: 'app-home',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  currentUser: any; // Usuario actual
-  productos: Producto[] = [ // Lista principal de productos
-    {
-      nombre: 'Tabla 40 Mixta',
-      descripcion: '10 piezas panko pollo, 10 sésamo camarón, 10 queso salmón',
-      precio: 17990,
-      imagenUrl: 'https://www.cuisineplay.fr/wp-content/uploads/2021/07/visuel-originales-sushi-1024x647.jpg'
-    },
-    {
-      nombre: 'Gohan de Salmón',
-      descripcion: 'Base de arroz con palta, queso crema, cebollín y sésamo',
-      precio: 7990,
-      imagenUrl: 'https://www.circuitogastronomico.com/wp-content/uploads/2023/01/tokin-gohan.jpg'
-    },
-    {
-      nombre: 'Sushi Roll Especial',
-      descripcion: 'Rollo de salmón y palta con salsa especial',
-      precio: 10990,
-      imagenUrl: 'https://th.bing.com/th/id/R.39c66e2bc3095df751e4ec688d240c28?rik=iOe%2fp6sOvWUCdA&riu=http%3a%2f%2fstatic1.squarespace.com%2fstatic%2f5e2755963c421657bd408970%2ft%2f6040eeee41e1f302d26bf420%2f1614868213133%2fSmoked%2bsalmon%2broll%2bups%2b2.jpg%3fformat%3d1500w&ehk=kTiVm%2b3jDtTlTpjRkA230LalLkyDaiA8Whms29bYJWk%3d&risl=&pid=ImgRaw&r=0'
-    },
-    {
-    nombre: 'Tabla 30 Hot',
-      descripcion: '10 piezas envueltas en panko, relleno con pollo, queso crema y palta. 10 piezas en vueltas en panko, relleno de camarón, queso crema y cebollín. 10 piezas envuelto en panko, relleno con kanikama, queso crema y cebollin,2unaguis,1soya',
-      precio: 17990,
-      imagenUrl: 'https://www.cuisineplay.fr/wp-content/uploads/2021/07/visuel-originales-sushi-1024x647.jpg'
-    },
-    {
-      nombre: 'Tabla 30 Mixta',
-      descripcion: 'Rollo de salmón y palta con salsa especial',
-      precio: 10990,
-      imagenUrl: 'https://th.bing.com/th/id/R.39c66e2bc3095df751e4ec688d240c28?rik=iOe%2fp6sOvWUCdA&riu=http%3a%2f%2fstatic1.squarespace.com%2fstatic%2f5e2755963c421657bd408970%2ft%2f6040eeee41e1f302d26bf420%2f1614868213133%2fSmoked%2bsalmon%2broll%2bups%2b2.jpg%3fformat%3d1500w&ehk=kTiVm%2b3jDtTlTpjRkA230LalLkyDaiA8Whms29bYJWk%3d&risl=&pid=ImgRaw&r=0'
-    },
-    {
-      nombre: 'Tabla 50 Hot',
-      descripcion: 'Rollo de salmón y palta con salsa especial',
-      precio: 10990,
-      imagenUrl: 'https://th.bing.com/th/id/R.39c66e2bc3095df751e4ec688d240c28?rik=iOe%2fp6sOvWUCdA&riu=http%3a%2f%2fstatic1.squarespace.com%2fstatic%2f5e2755963c421657bd408970%2ft%2f6040eeee41e1f302d26bf420%2f1614868213133%2fSmoked%2bsalmon%2broll%2bups%2b2.jpg%3fformat%3d1500w&ehk=kTiVm%2b3jDtTlTpjRkA230LalLkyDaiA8Whms29bYJWk%3d&risl=&pid=ImgRaw&r=0'
-    },
-    {
-      nombre: 'Tabla 60 Mixta',
-      descripcion: 'Rollo de salmón y palta con salsa especial',
-      precio: 10990,
-      imagenUrl: 'https://th.bing.com/th/id/R.39c66e2bc3095df751e4ec688d240c28?rik=iOe%2fp6sOvWUCdA&riu=http%3a%2f%2fstatic1.squarespace.com%2fstatic%2f5e2755963c421657bd408970%2ft%2f6040eeee41e1f302d26bf420%2f1614868213133%2fSmoked%2bsalmon%2broll%2bups%2b2.jpg%3fformat%3d1500w&ehk=kTiVm%2b3jDtTlTpjRkA230LalLkyDaiA8Whms29bYJWk%3d&risl=&pid=ImgRaw&r=0'
-    },
-    {
-      nombre: 'Tabla Vegetariana 30 Mixta',
-      descripcion: 'Rollo de salmón y palta con salsa especial',
-      precio: 10990,
-      imagenUrl: 'https://th.bing.com/th/id/R.39c66e2bc3095df751e4ec688d240c28?rik=iOe%2fp6sOvWUCdA&riu=http%3a%2f%2fstatic1.squarespace.com%2fstatic%2f5e2755963c421657bd408970%2ft%2f6040eeee41e1f302d26bf420%2f1614868213133%2fSmoked%2bsalmon%2broll%2bups%2b2.jpg%3fformat%3d1500w&ehk=kTiVm%2b3jDtTlTpjRkA230LalLkyDaiA8Whms29bYJWk%3d&risl=&pid=ImgRaw&r=0'
-    },
-    {
-      nombre: 'Tabla 80 Mixta',
-      descripcion: 'Rollo de salmón y palta con salsa especial',
-      precio: 10990,
-      imagenUrl: 'https://th.bing.com/th/id/R.39c66e2bc3095df751e4ec688d240c28?rik=iOe%2fp6sOvWUCdA&riu=http%3a%2f%2fstatic1.squarespace.com%2fstatic%2f5e2755963c421657bd408970%2ft%2f6040eeee41e1f302d26bf420%2f1614868213133%2fSmoked%2bsalmon%2broll%2bups%2b2.jpg%3fformat%3d1500w&ehk=kTiVm%2b3jDtTlTpjRkA230LalLkyDaiA8Whms29bYJWk%3d&risl=&pid=ImgRaw&r=0'
-    },
-    {
-      nombre: 'Tabla 100 Mixta',
-      descripcion: 'Rollo de salmón y palta con salsa especial',
-      precio: 10990,
-      imagenUrl: 'https://th.bing.com/th/id/R.39c66e2bc3095df751e4ec688d240c28?rik=iOe%2fp6sOvWUCdA&riu=http%3a%2f%2fstatic1.squarespace.com%2fstatic%2f5e2755963c421657bd408970%2ft%2f6040eeee41e1f302d26bf420%2f1614868213133%2fSmoked%2bsalmon%2broll%2bups%2b2.jpg%3fformat%3d1500w&ehk=kTiVm%2b3jDtTlTpjRkA230LalLkyDaiA8Whms29bYJWk%3d&risl=&pid=ImgRaw&r=0'
-    }
-  ];
+  currentUser: any;
+  productos: Producto[] = [];
 
-  constructor(private router: Router, private carritoService: CarritoService) {} // Inyección de servicios principales
-  
-  agregarAlCarrito(producto: Producto) {  // Agrega producto al carrito
-  this.carritoService.agregar(producto, this.currentUser.email);
-  alert(`${producto.nombre} agregado al carrito`);
-}
-  ngOnInit() { // Verifica si hay usuario logueado
+  constructor(
+    private router: Router,
+    private carritoService: CarritoService,
+    private productoService: ProductoService
+  ) {}
+
+  ngOnInit() {
     const user = localStorage.getItem('currentUser');
     if (!user) {
-      this.router.navigate(['/login']); // Redirige si no hay usuario
+      this.router.navigate(['/login']);
     } else {
-      this.currentUser = JSON.parse(user);  // Asigna usuario actual
+      this.currentUser = JSON.parse(user);
+      this.cargarProductos();
     }
   }
 
-  logout() {  // Cierra sesión
+  cargarProductos() {
+    this.productoService.getProductos().subscribe({
+      next: (data) => this.productos = data,
+      error: (err) => console.error('Error al cargar productos:', err)
+    });
+  }
+
+  agregarAlCarrito(producto: Producto) {
+    this.carritoService.agregar(producto, this.currentUser.email);
+    alert(`${producto.nombre} agregado al carrito`);
+  }
+
+  logout() {
     localStorage.removeItem('currentUser');
     this.router.navigate(['/login']);
   }
 
-  goToProfile() { // Navega al perfil
+  goToProfile() {
     alert('Ir al perfil de ' + this.currentUser?.email);
   }
 
-  goToCart() { // Navega al carrito
-  this.router.navigate(['/carrito']);
+  goToCart() {
+    this.router.navigate(['/carrito']);
   }
-  goHome() {  // Navega a Home
-  this.router.navigate(['/home']);
+
+  goHome() {
+    this.router.navigate(['/home']);
   }
-  goPromociones() {  // Navega a Promociones
-  this.router.navigate(['/promociones']);
+
+  goPromociones() {
+    this.router.navigate(['/promociones']);
   }
-  goTablas() { // Navega a Tablas
-  this.router.navigate(['/tablas']);
+
+  goTablas() {
+    this.router.navigate(['/tablas']);
   }
-  goProfiles(){ // Navega a perfiles
-  this.router.navigate(['/profiles']);
-  }  
+
+  goProfiles() {
+    this.router.navigate(['/profiles']);
+  }
 }
