@@ -25,61 +25,61 @@ export class PromocionesComponent implements OnInit {
       nombre: 'Hand Roll de Pollo, Queso, Palta (2x1)',
       descripcion: 'Incluye Soya o Unagi',
       precio: 5600,
-      imagenUrl: 'assets/img/Hand Roll de Pollo.jpg'
+      imagenUrl: 'https://sushikatsu.cl/wp-content/uploads/2022/09/HANDROLL-POLLO-scaled.jpg'
     },
     {
       nombre: 'Hand Roll de Pollo, Queso, Cebollín (2x1)',
       descripcion: 'Incluye Soya o Unagi',
       precio: 5600,
-      imagenUrl: 'assets/img/Hand Roll de Pollo.jpg'
+      imagenUrl: 'https://sushikatsu.cl/wp-content/uploads/2022/09/HANDROLL-POLLO-scaled.jpg'
     },
     {
       nombre: 'Hand Roll de Pimentón, Cebollín, Palta (2x1)',
       descripcion: 'Incluye Soya o Unagi',
       precio: 5600,
-      imagenUrl: 'assets/img/Hand Roll de Pollo.jpg'
+      imagenUrl: 'https://sushikatsu.cl/wp-content/uploads/2022/09/HANDROLL-POLLO-scaled.jpg'
     },
     {
     nombre: 'Hand Roll de Pimentón, Queso, Aceitunas (2x1)',
       descripcion: 'Incluye Soya o Unagi',
       precio: 5600,
-      imagenUrl: 'assets/img/Hand Roll de Pollo.jpg'
+      imagenUrl: 'https://sushikatsu.cl/wp-content/uploads/2022/09/HANDROLL-POLLO-scaled.jpg'
     },
     {
       nombre: 'Hand Roll de Champiñón, Queso, Pimentón (2x1)',
       descripcion: 'Incluye Soya o Unagi',
       precio: 5600,
-      imagenUrl: 'assets/img/Hand Roll de Pollo.jpg'
+      imagenUrl: 'https://sushikatsu.cl/wp-content/uploads/2022/09/HANDROLL-POLLO-scaled.jpg'
     },
     {
       nombre: '2 Hand Rolls a elección',
       descripcion: 'Incluye Soya o Unagi',
       precio: 9000,
-      imagenUrl: 'assets/img/Hand Roll de Pollo.jpg'
+      imagenUrl: 'https://sushikatsu.cl/wp-content/uploads/2022/09/HANDROLL-POLLO-scaled.jpg'
     },
     {
       nombre: 'Pizza Pepperoni Parmesano',
       descripcion: 'Salsa di Pomodoro, queso, orégano, pepperoni y parmesano',
       precio: 10990,
-      imagenUrl: 'assets/img/Pizza Queso.jpg'
+      imagenUrl: 'https://cdn-3.expansion.mx/dims4/default/895520d/2147483647/strip/true/crop/800x450+0+0/resize/1600x900!/quality/90/?url=https:%2F%2Fcdn-3.expansion.mx%2Fcd%2Ff9%2Fcf9d969b4b3694fd134730473887%2Fpizza-queso-1.jpg'
     },
     {
       nombre: 'Sushi + Gyosa + Bebida',
       descripcion: 'Tabla de 40 cortes, 10 Cheese Pollo, palta, 10 Sésamo Camarón, queso, cebollín 10 Ciboulette Palmito, queso, palta 10 Panko Kanikama, queso, cebollín + 5 Gyozas + Bebida. Incluye soya o unagi',
       precio: 26300,
-      imagenUrl: 'assets/img/Gyosas.jpg'
+      imagenUrl: 'https://cdn-3.expansion.mx/dims4/default/895520d/2147483647/strip/true/crop/800x450+0+0/resize/1600x900!/quality/90/?url=https:%2F%2Fcdn-3.expansion.mx%2Fcd%2Ff9%2Fcf9d969b4b3694fd134730473887%2Fpizza-queso-1.jpg'
     },
     {
       nombre: 'Combo Mix',
       descripcion: 'Papas Fritas - Ración de 500 grs, Nuggets de Pollo - Ración de 12 unidades, Empanaditas de Queso - Ración de 5 unidades, Aros de Cebolla - Ración de 5 unidades, GRATIS - Bebida de Lata Lata 350 ml.',
       precio: 20600,
-      imagenUrl: 'assets/img/ComboMix.jpeg'
+      imagenUrl: 'https://assets.puzzlefactory.com/puzzle/487/633/original.jpg'
     },
     {
       nombre: 'Pizza + Empanada + Bebida',
       descripcion: 'Pizza familiar con Salsa di Pomodoro, queso, orégano, 3 ingredientes a elección + Ración de Empanaditas + Bebida.',
       precio: 21800,
-      imagenUrl: 'assets/img/ComboPizza.jpg'
+      imagenUrl: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/8d/5c/82/grass-fed-antibiotic.jpg?w=1400&h=800&s=1'
     }
   ];
 

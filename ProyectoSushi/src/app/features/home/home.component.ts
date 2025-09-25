@@ -24,61 +24,61 @@ export class HomeComponent implements OnInit {
       nombre: 'Tabla 40 Mixta',
       descripcion: '10 piezas panko pollo, 10 sésamo camarón, 10 queso salmón',
       precio: 17990,
-      imagenUrl: 'assets/img/Tabla40.jpg'
+      imagenUrl: 'https://www.cuisineplay.fr/wp-content/uploads/2021/07/visuel-originales-sushi-1024x647.jpg'
     },
     {
       nombre: 'Gohan de Salmón',
       descripcion: 'Base de arroz con palta, queso crema, cebollín y sésamo',
       precio: 7990,
-      imagenUrl: 'assets/img/GohanS.jpg'
+      imagenUrl: 'https://www.circuitogastronomico.com/wp-content/uploads/2023/01/tokin-gohan.jpg'
     },
     {
       nombre: 'Sushi Roll Especial',
       descripcion: 'Rollo de salmón y palta con salsa especial',
       precio: 10990,
-      imagenUrl: 'assets/img/SalmonP.jpg'
+      imagenUrl: 'https://th.bing.com/th/id/R.39c66e2bc3095df751e4ec688d240c28?rik=iOe%2fp6sOvWUCdA&riu=http%3a%2f%2fstatic1.squarespace.com%2fstatic%2f5e2755963c421657bd408970%2ft%2f6040eeee41e1f302d26bf420%2f1614868213133%2fSmoked%2bsalmon%2broll%2bups%2b2.jpg%3fformat%3d1500w&ehk=kTiVm%2b3jDtTlTpjRkA230LalLkyDaiA8Whms29bYJWk%3d&risl=&pid=ImgRaw&r=0'
     },
     {
     nombre: 'Tabla 30 Hot',
       descripcion: '10 piezas envueltas en panko, relleno con pollo, queso crema y palta. 10 piezas en vueltas en panko, relleno de camarón, queso crema y cebollín. 10 piezas envuelto en panko, relleno con kanikama, queso crema y cebollin,2unaguis,1soya',
       precio: 17990,
-      imagenUrl: 'assets/img/Tabla40.jpg'
+      imagenUrl: 'https://www.cuisineplay.fr/wp-content/uploads/2021/07/visuel-originales-sushi-1024x647.jpg'
     },
     {
       nombre: 'Tabla 30 Mixta',
       descripcion: 'Rollo de salmón y palta con salsa especial',
       precio: 10990,
-      imagenUrl: 'assets/img/SalmonP.jpg'
+      imagenUrl: 'https://th.bing.com/th/id/R.39c66e2bc3095df751e4ec688d240c28?rik=iOe%2fp6sOvWUCdA&riu=http%3a%2f%2fstatic1.squarespace.com%2fstatic%2f5e2755963c421657bd408970%2ft%2f6040eeee41e1f302d26bf420%2f1614868213133%2fSmoked%2bsalmon%2broll%2bups%2b2.jpg%3fformat%3d1500w&ehk=kTiVm%2b3jDtTlTpjRkA230LalLkyDaiA8Whms29bYJWk%3d&risl=&pid=ImgRaw&r=0'
     },
     {
       nombre: 'Tabla 50 Hot',
       descripcion: 'Rollo de salmón y palta con salsa especial',
       precio: 10990,
-      imagenUrl: 'assets/img/SalmonP.jpg'
+      imagenUrl: 'https://th.bing.com/th/id/R.39c66e2bc3095df751e4ec688d240c28?rik=iOe%2fp6sOvWUCdA&riu=http%3a%2f%2fstatic1.squarespace.com%2fstatic%2f5e2755963c421657bd408970%2ft%2f6040eeee41e1f302d26bf420%2f1614868213133%2fSmoked%2bsalmon%2broll%2bups%2b2.jpg%3fformat%3d1500w&ehk=kTiVm%2b3jDtTlTpjRkA230LalLkyDaiA8Whms29bYJWk%3d&risl=&pid=ImgRaw&r=0'
     },
     {
       nombre: 'Tabla 60 Mixta',
       descripcion: 'Rollo de salmón y palta con salsa especial',
       precio: 10990,
-      imagenUrl: 'assets/img/SalmonP.jpg'
+      imagenUrl: 'https://th.bing.com/th/id/R.39c66e2bc3095df751e4ec688d240c28?rik=iOe%2fp6sOvWUCdA&riu=http%3a%2f%2fstatic1.squarespace.com%2fstatic%2f5e2755963c421657bd408970%2ft%2f6040eeee41e1f302d26bf420%2f1614868213133%2fSmoked%2bsalmon%2broll%2bups%2b2.jpg%3fformat%3d1500w&ehk=kTiVm%2b3jDtTlTpjRkA230LalLkyDaiA8Whms29bYJWk%3d&risl=&pid=ImgRaw&r=0'
     },
     {
       nombre: 'Tabla Vegetariana 30 Mixta',
       descripcion: 'Rollo de salmón y palta con salsa especial',
       precio: 10990,
-      imagenUrl: 'assets/img/SalmonP.jpg'
+      imagenUrl: 'https://th.bing.com/th/id/R.39c66e2bc3095df751e4ec688d240c28?rik=iOe%2fp6sOvWUCdA&riu=http%3a%2f%2fstatic1.squarespace.com%2fstatic%2f5e2755963c421657bd408970%2ft%2f6040eeee41e1f302d26bf420%2f1614868213133%2fSmoked%2bsalmon%2broll%2bups%2b2.jpg%3fformat%3d1500w&ehk=kTiVm%2b3jDtTlTpjRkA230LalLkyDaiA8Whms29bYJWk%3d&risl=&pid=ImgRaw&r=0'
     },
     {
       nombre: 'Tabla 80 Mixta',
       descripcion: 'Rollo de salmón y palta con salsa especial',
       precio: 10990,
-      imagenUrl: 'assets/img/SalmonP.jpg'
+      imagenUrl: 'https://th.bing.com/th/id/R.39c66e2bc3095df751e4ec688d240c28?rik=iOe%2fp6sOvWUCdA&riu=http%3a%2f%2fstatic1.squarespace.com%2fstatic%2f5e2755963c421657bd408970%2ft%2f6040eeee41e1f302d26bf420%2f1614868213133%2fSmoked%2bsalmon%2broll%2bups%2b2.jpg%3fformat%3d1500w&ehk=kTiVm%2b3jDtTlTpjRkA230LalLkyDaiA8Whms29bYJWk%3d&risl=&pid=ImgRaw&r=0'
     },
     {
       nombre: 'Tabla 100 Mixta',
       descripcion: 'Rollo de salmón y palta con salsa especial',
       precio: 10990,
-      imagenUrl: 'assets/img/SalmonP.jpg'
+      imagenUrl: 'https://th.bing.com/th/id/R.39c66e2bc3095df751e4ec688d240c28?rik=iOe%2fp6sOvWUCdA&riu=http%3a%2f%2fstatic1.squarespace.com%2fstatic%2f5e2755963c421657bd408970%2ft%2f6040eeee41e1f302d26bf420%2f1614868213133%2fSmoked%2bsalmon%2broll%2bups%2b2.jpg%3fformat%3d1500w&ehk=kTiVm%2b3jDtTlTpjRkA230LalLkyDaiA8Whms29bYJWk%3d&risl=&pid=ImgRaw&r=0'
     }
   ];
 

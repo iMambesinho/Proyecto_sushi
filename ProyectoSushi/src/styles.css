@@ -7,6 +7,6 @@ html, body {
 
 .bg-image {
   flex: 8;
-  background: url("assets/img/Login.jpg") no-repeat center center;
+  background: url("https://www.lireke.cl/cdn/shop/articles/sushi.jpg?v=1641225745") no-repeat center center;
   background-size: cover;
   }
