@@ -1,5 +1,6 @@
 // Importamos las herramientas necesarias de Angular Router
 import { provideRouter, RouterModule, Routes } from '@angular/router';
+import { AdminLoginComponent } from './admin-login/admin-login';
 
 // Importamos todos los componentes que usaremos en nuestras rutas
 import { LoginComponent } from './features/login/login.component';
@@ -24,7 +25,8 @@ export const routes: Routes = [
   { path: 'promociones', component: PromocionesComponent },
   { path: 'tablas', component: TablasComponent },
   { path: 'carrito', component: CarritoComponent },
-  { path: 'admin', component: Admin }
+  { path: 'admin', component: Admin },
+  { path: 'admin-login', component: AdminLoginComponent },
 ];
 
 export const appRouter = provideRouter(routes);

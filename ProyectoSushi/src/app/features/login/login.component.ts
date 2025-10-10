@@ -48,4 +48,7 @@ export class LoginComponent { /* clase del componente (login) */
   goToRegister() { /* navegar a la página de registro */
     this.router.navigate(['/register']);
   }
+  goToAdminLogin() {
+    this.router.navigate(['/admin-login']); // Redirige a la nueva ruta
+  }
 }

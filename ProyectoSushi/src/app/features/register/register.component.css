@@ -18,7 +18,7 @@ html, body {
 
 .bg-image {
   flex: 8;
-  background-image: url('/assets/img/Login.jpg');
+  background-image: url('https://www.lireke.cl/cdn/shop/articles/sushi.jpg?v=1641225745');
   background-size: cover;
   background-position: center;
 }
@@ -28,14 +28,14 @@ html, body {
   background-color: #282828;
   display: flex;
   justify-content: center;
-  align-items: center; /* LÍNEA 31 CORREGIDA */
+  align-items: center;
   padding: 0 20px;
 }
 
 .right-content {
   display: flex;
   flex-direction: column;
-  align-items: center; /* LÍNEA 38 CORREGIDA */
+  align-items: center;
 }
 
 .logo {
