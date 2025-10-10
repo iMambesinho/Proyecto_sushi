@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core'; 
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { CarritoService } from '../carrito/carrito.service';
@@ -18,7 +18,8 @@ export class HomeComponent implements OnInit {
   constructor(
     private router: Router,
     private carritoService: CarritoService,
-    private productoService: ProductoService
+    private productoService: ProductoService,
+    private cd: ChangeDetectorRef 
   ) {}
 
   ngOnInit() {
@@ -33,7 +34,14 @@ export class HomeComponent implements OnInit {
 
   cargarProductos() {
     this.productoService.getProductos().subscribe({
-      next: (data) => this.productos = data,
+      next: (data) => {
+        this.productos = data;
+        
+        
+        this.cd.detectChanges(); 
+
+        console.log('HomeComponent: Productos cargados y detección de cambios forzada.');
+      },
       error: (err) => console.error('Error al cargar productos:', err)
     });
   }
