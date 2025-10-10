@@ -1,50 +1,145 @@
-.admin-container {
+:host {    /* Contenedor principal del componente */
+  display: block;
+  font-family: "Cinzel", serif;
+  background-color: #121212;
+  color: #fff;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.navbar { /* Barra de navegación superior */
+  position: relative; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #2a2b38;
+  padding: 10px 20px;
+  border-bottom: 2px solid #ffeba7;
+  height: 30px; 
+}
+.logo-img { /* Logo principal */
+  position: absolute;
+  top: -20px;     
+  left: 20px;     
+  height: 100px;  
+  width: auto;
+  cursor: pointer;
+  z-index: 10;    
+}
+.brand { 
+  position: relative;
+}
+
+.nav-center { /* Menú de navegación centrado */
+  display: flex;
+  gap: 15px;
+  flex: 1;
+  justify-content: center;
+  margin-left: 380px;
+}
+
+.user-actions { /* Acciones de usuario a la derecha */
+  display: flex;
+  gap: 10px;
+}
+
+.nav-btn {  /* Botón de la barra de navegación */
+  background: transparent;
+  border: 1px solid #ffeba7;
+  border-radius: 4px;
+  padding: 0.4em 0.8em;
+  color: #ffeba7;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.nav-btn:hover { /* Efecto hover en botón */
+  background-color: #ffeba7;
+  color: #2a2b38;
+}
+
+.menu-container {  /* Contenedor principal del menú */
   padding: 2rem;
-  max-width: 1200px;
-  margin: auto;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-}
-
-h1 {
-  color: #333;
-  border-bottom: 2px solid #007bff;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.widget-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.widget {
-  background-color: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   text-align: center;
 }
 
-.widget h2 {
-  margin-top: 0;
-  color: #0056b3;
+.menu-title { /* Título del menú */
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
 }
 
-.widget button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 5px;
-  cursor: pointer;
+.product-grid { /* Grid de productos */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.product-card { /* Tarjeta individual de producto */
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover { /* Efecto hover en tarjeta */
+  transform: scale(1.03);
+}
+
+.product-img { /* Imagen del producto */
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.product-info {  /* Información del producto */
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  padding: 1rem;
+}
+.product-footer { /* Pie de la tarjeta de producto */
+  margin-top: auto; 
+}
+.product-name { /* Nombre del producto */
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-desc { /* Descripción del producto */
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 0.5rem;
+}
+
+.product-price { /* Precio del producto */
   font-size: 1rem;
-  transition: background-color 0.2s;
+  font-weight: bold;
+  color: #ffcc00;
+  margin-bottom: 10px;
+}
+.add-cart-btn { /* Botón para agregar al carrito */
+  background-color: #ffeba7;
+  border: none;
+  color: #2a2b38;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: auto;
+  width: 100%; 
+  transition: 0.2s;
 }
 
-.widget button:hover {
-  background-color: #0056b3;
+.add-cart-btn:hover { /* Efecto hover en botón */
+  background-color: #2a2b38;
+  color: #ffeba7;
 }
+

@@ -1,22 +1,59 @@
-<div class="admin-container">
-  <h1>Dashboard de Administración</h1>
-  <p>¡Bienvenido, administrador! Desde aquí podrás gestionar la aplicación.</p>
-
-  <div class="widget-grid">
-    <div class="widget">
-      <h2>Usuarios</h2>
-      <p>Gestionar todos los usuarios registrados.</p>
-      <button>Ver Usuarios</button>
-    </div>
-    <div class="widget">
-      <h2>Productos</h2>
-      <p>Añadir, editar o eliminar productos.</p>
-      <button>Ver Productos</button>
-    </div>
-    <div class="widget">
-      <h2>Estadísticas</h2>
-      <p>Revisar las métricas de la aplicación.</p>
-      <button>Ver Estadísticas</button>
-    </div>
+<nav class="navbar">
+  <div class="brand">
+    <img src="https://i.imgur.com/RHgjzLI.png" alt="Logo" class="logo-img" />
   </div>
-</div>
+
+  <div class="nav-center">
+    </div>
+
+  <div class="user-actions">
+    <button class="nav-btn" (click)="logout()">Cerrar Sesión</button>
+  </div>
+</nav>
+
+<main class="menu-container">
+  <h1 class="menu-title">Panel de Administración</h1>
+
+  <div class="product-grid">
+
+    <div class="product-card">
+      <img src="https://placehold.co/600x400/2a2b38/ffeba7?text=Usuarios" alt="Icono de Usuarios" class="product-img">
+      <div class="product-info">
+        <div>
+          <h3 class="product-name">Gestionar Usuarios</h3>
+          <p class="product-desc">Administra los roles, permisos y datos de los usuarios registrados.</p>
+        </div>
+        <div class="product-footer">
+          <button class="add-cart-btn">Administrar</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://placehold.co/600x400/2a2b38/ffeba7?text=Productos" alt="Icono de Productos" class="product-img">
+      <div class="product-info">
+        <div>
+          <h3 class="product-name">Gestionar Productos</h3>
+          <p class="product-desc">Añade, edita o elimina productos del menú de sushi.</p>
+        </div>
+        <div class="product-footer">
+          <button class="add-cart-btn">Administrar</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://placehold.co/600x400/2a2b38/ffeba7?text=Estadísticas" alt="Icono de Estadísticas" class="product-img">
+      <div class="product-info">
+        <div>
+          <h3 class="product-name">Ver Estadísticas</h3>
+          <p class="product-desc">Revisa las métricas de ventas, usuarios activos y rendimiento.</p>
+        </div>
+        <div class="product-footer">
+          <button class="add-cart-btn">Administrar</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
