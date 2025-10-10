@@ -1,45 +1,67 @@
-import { Component } from '@angular/core'; // Importa decorador principal
-import { CommonModule } from '@angular/common'; // Módulo común de Angular
-import { FormsModule } from '@angular/forms'; // Módulo para formularios
-import { Router } from '@angular/router'; // Servicio de navegación
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-register', // Selector del componente
-  standalone: true, // Componente independiente
-  imports: [CommonModule, FormsModule], // Importa módulos necesarios
-  templateUrl: './register.component.html',  // HTML principal
-  styleUrls: ['./register.component.css'] // CSS principal
+  selector: 'app-register',
+  standalone: true,
+  imports: [CommonModule, FormsModule],
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  email = '';  // Variable para correo
-  confirmEmail = ''; // Variable para confirmar correo
-  password = ''; // Variable para contraseña
+  run = '';
+  fullName = '';
+  address = '';
+  comuna = '';
+  provincia = '';
+  region = '';
+  birthDate = '';
+  gender = '';
+  phone = '';
+  email = '';
+  password = '';
 
-  constructor(private router: Router) {} // Inyección de servicio de rutas
+  constructor(private router: Router) {}
 
-  register() { // Método principal para registrar usuario
-    if (this.email !== this.confirmEmail) { // Verifica que los correos coincidan
-      alert('Los correos electrónicos no coinciden');
+  register() {
+    if (!this.run || !this.fullName || !this.address || !this.comuna || !this.provincia ||
+        !this.region || !this.birthDate || !this.gender || !this.phone || !this.email || !this.password) {
+      alert('Por favor, completa todos los campos.');
       return;
     }
 
-    const users = JSON.parse(localStorage.getItem('users') || '[]'); // Obtiene usuarios registrados
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
 
-    const exists = users.some((u: { email: string; password: string }) => u.email === this.email); // Verifica si el correo ya existe
+    const exists = users.some((u: { email: string }) => u.email === this.email);
 
-    if (exists) { // Si el correo ya está registrado
+    if (exists) {
       alert('Este correo ya está registrado');
       return;
     }
-    users.push({ email: this.email, password: this.password }); // Agrega nuevo usuario
-    localStorage.setItem('users', JSON.stringify(users)); // Guarda usuarios en localStorage
+
+    users.push({
+      run: this.run,
+      fullName: this.fullName,
+      address: this.address,
+      comuna: this.comuna,
+      provincia: this.provincia,
+      region: this.region,
+      birthDate: this.birthDate,
+      gender: this.gender,
+      phone: this.phone,
+      email: this.email,
+      password: this.password
+    });
+
+    localStorage.setItem('users', JSON.stringify(users));
 
     alert('Registro exitoso');
-    this.router.navigate(['/login']); // Redirige a login
+    this.router.navigate(['/login']);
   }
 
-  goToLogin() { // Método para ir a login
+  goToLogin() {
     this.router.navigate(['/login']);
   }
 }
-

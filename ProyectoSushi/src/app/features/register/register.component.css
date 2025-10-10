@@ -1,61 +1,64 @@
-:host {   /* Contenedor principal del componente */
+:host {
   display: block;
   height: 100%;
 }
 
-html, body { /* Estilos base de la página */
+html, body {
   margin: 0;
   padding: 0;
   height: 100%;
   font-family: sans-serif;
 }
 
-.container { /* Contenedor general con layout flex */
+.container {
   display: flex;
   height: 100vh;
   width: 100%;
 }
 
-
-.bg-image {  /* Fondo con imagen a la izquierda */
+.bg-image {
   flex: 8;
-  background-image: url('/assets/img/Login.jpg'); 
+  background-image: url('/assets/img/Login.jpg');
   background-size: cover;
   background-position: center;
 }
 
-.bg-side { /* Panel lateral derecho con fondo oscuro */
+.bg-side {
   flex: 3;
   background-color: #282828;
   display: flex;
-  justify-content: center; 
-  align-items: center;     
+  justify-content: center;
+  align-items: center; /* LÍNEA 31 CORREGIDA */
   padding: 0 20px;
 }
-.right-content {  /* Contenido centrado verticalmente */
+
+.right-content {
   display: flex;
-  flex-direction: column; 
-  align-items: center;   
+  flex-direction: column;
+  align-items: center; /* LÍNEA 38 CORREGIDA */
 }
-.logo { /* Logo principal */
+
+.logo {
   width: 150px;
   height: auto;
   margin-bottom: 30px;
 }
-.card {  /* Tarjeta principal del formulario */
+
+.card {
   --main-col: #ffeba7;
   --bg-col: #2a2b38;
   --bg-field: #1f2029;
 
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   background: var(--bg-col);
   border-radius: 10px;
   border: 1px solid var(--main-col);
   user-select: none;
 
-  width: 320px;
+  width: 680px;
   max-width: 90%;
   padding: 2rem 1.5rem;
   gap: 1rem;
@@ -64,8 +67,22 @@ html, body { /* Estilos base de la página */
   margin-top: 25px;
 }
 
-.field {  /* Campo de entrada de datos */
-  margin-top: 0.5rem;
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.column-left, .column-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field {
+  margin-top: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,7 +92,7 @@ html, body { /* Estilos base de la página */
   border-radius: 4px;
 }
 
-.input-field {  /* Input principal del formulario */
+.input-field {
   background: transparent;
   border: none;
   outline: none;
@@ -85,7 +102,21 @@ html, body { /* Estilos base de la página */
   caret-color: var(--main-col);
 }
 
-.title { /* Título del formulario */
+select.input-field {
+  padding: 0.5em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ffeba7%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+  background-repeat: no-repeat;
+  background-position: right 0.7em top 50%, 0 0;
+  background-size: 0.65em auto;
+}
+select.input-field option {
+  background-color: var(--bg-col);
+}
+
+.title {
   margin-bottom: 1rem;
   font-size: 1.5em;
   font-weight: 500;
@@ -94,8 +125,8 @@ html, body { /* Estilos base de la página */
   text-transform: uppercase;
 }
 
-.btn {  /* Botón principal */
-  margin: 1rem;
+.btn {
+  margin-top: 1rem;
   border: none;
   border-radius: 4px;
   font-weight: bold;
@@ -109,26 +140,26 @@ html, body { /* Estilos base de la página */
   cursor: pointer;
 }
 
-.btn:hover { /* Efecto hover en botón */
+.btn:hover {
   background-color: var(--bg-field);
   color: var(--main-col);
   box-shadow: 0 8px 24px 0 rgb(16 39 112 / 20%);
 }
 
-.btn-link {  /* Botón de enlace secundario */
-  background: none;       
-  border: none;           
-  color: #ffffff;         
+.btn-link {
+  background: none;
+  border: none;
+  color: #ffffff;
   display: block;
   font-size: 0.75em;
   transition: color 0.3s ease-out;
   margin-top: 0.5rem;
-  cursor: pointer;       
-  text-decoration: none;  
-  padding: 0;             
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0;
 }
 
-.btn-link:hover { /* Efecto hover en botón de enlace */
+.btn-link:hover {
   color: var(--main-col);
   text-decoration: underline;
 }

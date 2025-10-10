@@ -1,30 +1,70 @@
-<div class="container"> <!-- Contenedor principal de la página -->
-  <div class="bg-image"></div> <!-- Imagen de fondo a la izquierda -->
+<div class="container">
+  <div class="bg-image"></div>
 
-  <div class="bg-side"> <!-- Panel lateral derecho -->
-    <div class="right-content"> <!-- Contenido centrado verticalmente -->
-      <img src="https://i.imgur.com/RHgjzLI.png" alt="Logo" class="logo" /> <!-- Logo principal -->
+  <div class="bg-side">
+    <div class="right-content">
+      <img src="https://i.imgur.com/RHgjzLI.png" alt="Logo" class="logo" />
 
-      <div class="card"> <!-- Tarjeta del formulario de registro -->
-        <h2 class="title">Registro</h2> <!-- Título del formulario -->
+      <div class="card">
+        <h2 class="title">Registro</h2>
 
-        <div class="field">
-          <input type="email" class="input-field" placeholder="Correo electrónico"
-            [(ngModel)]="email" name="email" required /> <!-- Campo correo -->
+        <div class="form-grid">
+          <div class="column-left">
+            <div class="field">
+              <input type="text" class="input-field" placeholder="RUN (con guión)" [(ngModel)]="run" name="run" required />
+            </div>
+
+            <div class="field">
+              <input type="text" class="input-field" placeholder="Nombre Completo" [(ngModel)]="fullName" name="fullName" required />
+            </div>
+
+            <div class="field">
+              <input type="text" class="input-field" placeholder="Dirección" [(ngModel)]="address" name="address" required />
+            </div>
+
+            <div class="field">
+              <input type="text" class="input-field" placeholder="Comuna" [(ngModel)]="comuna" name="comuna" required />
+            </div>
+
+            <div class="field">
+              <input type="text" class="input-field" placeholder="Provincia" [(ngModel)]="provincia" name="provincia" required />
+            </div>
+
+            <div class="field">
+              <input type="text" class="input-field" placeholder="Región" [(ngModel)]="region" name="region" required />
+            </div>
+          </div>
+
+          <div class="column-right">
+            <div class="field">
+              <input type="date" class="input-field" placeholder="Fecha de Nacimiento" [(ngModel)]="birthDate" name="birthDate" required />
+            </div>
+
+            <div class="field">
+              <select class="input-field" [(ngModel)]="gender" name="gender" required>
+                <option value="" disabled selected>Seleccione su sexo</option>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <input type="tel" class="input-field" placeholder="Número Telefónico" [(ngModel)]="phone" name="phone" required />
+            </div>
+
+            <div class="field">
+              <input type="email" class="input-field" placeholder="Correo electrónico" [(ngModel)]="email" name="email" required />
+            </div>
+
+            <div class="field">
+              <input type="password" class="input-field" placeholder="Contraseña" [(ngModel)]="password" name="password" required />
+            </div>
+          </div>
         </div>
 
-        <div class="field">
-          <input type="email" class="input-field" placeholder="Re-ingrese correo electrónico"
-            [(ngModel)]="confirmEmail" name="confirmEmail" required /> <!-- Campo confirmar correo -->
-        </div>
-
-        <div class="field">
-          <input type="password" class="input-field" placeholder="Contraseña"
-            [(ngModel)]="password" name="password" required /> <!-- Campo contraseña -->
-        </div>
-
-        <button class="btn" (click)="register()">Registrar</button> <!-- Botón registrar -->
-        <button class="btn-link" (click)="goToLogin()">¿Ya tienes cuenta? Ingresar</button> <!-- Botón ir a login -->
+        <button class="btn" (click)="register()">Registrar</button>
+        <button class="btn-link" (click)="goToLogin()">¿Ya tienes cuenta? Ingresar</button>
       </div>
     </div>
   </div>
