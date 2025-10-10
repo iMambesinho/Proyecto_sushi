@@ -1,1 +1,43 @@
-<p>profile works!</p>
+<div class="profile-container" *ngIf="currentUser">
+  <div class="profile-card">
+    <h1 class="profile-title">Mi Perfil</h1>
+    <p class="profile-greeting">Hola, <strong>{{ currentUser.fullName }}</strong>. Aquí está la información de tu cuenta.</p>
+
+    <div class="info-grid">
+      <div class="info-item">
+        <label>Nombre Completo</label>
+        <span>{{ currentUser.fullName }}</span>
+      </div>
+      <div class="info-item">
+        <label>Correo Electrónico</label>
+        <span>{{ currentUser.email }}</span>
+      </div>
+      <div class="info-item">
+        <label>RUN</label>
+        <span>{{ currentUser.run }}</span>
+      </div>
+      <div class="info-item">
+        <label>Número Telefónico</label>
+        <span>{{ currentUser.phone }}</span>
+      </div>
+      <div class="info-item full-width">
+        <label>Dirección</label>
+        <span>{{ currentUser.address }}, {{ currentUser.comuna }}, {{ currentUser.provincia }}, {{ currentUser.region }}</span>
+      </div>
+      <div class="info-item">
+        <label>Fecha de Nacimiento</label>
+        <span>{{ currentUser.birthDate }}</span>
+      </div>
+      <div class="info-item">
+        <label>Sexo</label>
+        <span>{{ currentUser.gender }}</span>
+      </div>
+    </div>
+
+    <button class="back-btn" (click)="goBack()">Volver</button>
+  </div>
+</div>
+
+<div *ngIf="!currentUser">
+  <p>Cargando información del perfil...</p>
+</div>

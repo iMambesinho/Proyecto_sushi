@@ -1,0 +1,92 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #121212;
+  font-family: "Cinzel", serif;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.profile-container {
+  width: 100%;
+  max-width: 800px;
+}
+
+.profile-card {
+  background-color: #2a2b38;
+  color: #fff;
+  border-radius: 12px;
+  border: 1px solid #ffeba7;
+  padding: 2.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.profile-title {
+  text-align: center;
+  color: #ffeba7;
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.profile-greeting {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.info-item {
+  background-color: #1f2029;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.info-item label {
+  display: block;
+  font-size: 0.9rem;
+  color: #ffeba7;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.info-item span {
+  font-size: 1.1rem;
+  word-wrap: break-word;
+}
+
+.info-item.full-width {
+  grid-column: span 2;
+}
+
+.back-btn {
+  display: block;
+  width: 200px;
+  margin: 2.5rem auto 0;
+  background: transparent;
+  border: 1px solid #ffeba7;
+  border-radius: 4px;
+  padding: 0.8em 1em;
+  color: #ffeba7;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.back-btn:hover {
+  background-color: #ffeba7;
+  color: #2a2b38;
+}
+
+
