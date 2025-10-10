@@ -3,41 +3,6 @@
   height: 100%;
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: sans-serif;
-}
-
-.container {
-  display: flex;
-  height: 100vh;
-  width: 100%;
-}
-
-.bg-image {
-  flex: 8;
-  background-image: url('https://www.lireke.cl/cdn/shop/articles/sushi.jpg?v=1641225745');
-  background-size: cover;
-  background-position: center;
-}
-
-.bg-side {
-  flex: 3;
-  background-color: #282828;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 20px;
-}
-
-.right-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .logo {
   width: 150px;
   height: auto;
@@ -57,13 +22,11 @@ html, body {
   border-radius: 10px;
   border: 1px solid var(--main-col);
   user-select: none;
-
   width: 680px;
   max-width: 90%;
   padding: 2rem 1.5rem;
   gap: 1rem;
   box-shadow: 0 0 20px rgba(255, 235, 167, 0.1);
-
   margin-top: 25px;
 }
 
@@ -162,4 +125,20 @@ select.input-field option {
 .btn-link:hover {
   color: var(--main-col);
   text-decoration: underline;
+}
+
+
+
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+    padding: 1.5rem 1rem;
+    border: none;
+    box-shadow: none;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr; 
+    gap: 0.5rem;
+  }
 }

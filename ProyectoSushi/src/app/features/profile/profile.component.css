@@ -89,4 +89,22 @@
   color: #2a2b38;
 }
 
+/* --- MEDIA QUERY PARA EL PERFIL DE USUARIO --- */
 
+@media (max-width: 768px) {
+  :host {
+    padding: 1rem; /* Menos padding en pantallas pequeñas */
+  }
+
+  .profile-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr; /* Cambiamos de 2 columnas a 1 */
+  }
+
+  .info-item.full-width {
+    grid-column: span 1; /* Reseteamos el span */
+  }
+}

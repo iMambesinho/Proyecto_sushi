@@ -1,12 +1,62 @@
+/* src/styles.css */
+
+/* Estilos base para todo el proyecto */
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: #000;
+  background-color: #121212; /* Fondo oscuro por defecto */
+  font-family: "Cinzel", serif; /* Fuente principal */
+}
+
+/* Clases de layout compartidas por Login y Register */
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
 }
 
 .bg-image {
   flex: 8;
   background: url("https://www.lireke.cl/cdn/shop/articles/sushi.jpg?v=1641225745") no-repeat center center;
   background-size: cover;
+}
+
+.bg-side {
+  flex: 3;
+  background-color: #282828;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  min-width: 320px; /* Ancho mínimo para el panel del formulario */
+  box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
+}
+
+.right-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* --- MEDIA QUERIES PARA RESPONSIVE --- */
+
+/* Estilos para pantallas de 992px o menos (tablets y móviles) */
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column; /* Apila los elementos verticalmente */
+    height: auto;
+    min-height: 100vh;
   }
+
+  .bg-image {
+    display: none; /* Ocultamos la imagen de fondo para ahorrar espacio */
+  }
+
+  .bg-side {
+    flex: 1; /* Hacemos que ocupe todo el espacio disponible */
+    width: 100%;
+  }
+}
