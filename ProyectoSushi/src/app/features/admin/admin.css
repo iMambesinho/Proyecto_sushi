@@ -1,4 +1,4 @@
-:host {
+:host {    /* Contenedor principal del componente */
   display: block;
   font-family: "Cinzel", serif;
   background-color: #121212;
@@ -7,30 +7,30 @@
   margin: 0;
 }
 
-.navbar {
-  position: relative;
+.navbar { /* Barra de navegación superior */
+  position: relative; 
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #2a2b38;
   padding: 10px 20px;
   border-bottom: 2px solid #ffeba7;
-  height: 30px;
+  height: 30px; 
 }
-.logo-img {
+.logo-img { /* Logo principal */
   position: absolute;
-  top: -20px;
-  left: 20px;
-  height: 100px;
+  top: -20px;     
+  left: 20px;     
+  height: 100px;  
   width: auto;
   cursor: pointer;
-  z-index: 10;
+  z-index: 10;    
 }
-.brand {
+.brand { 
   position: relative;
 }
 
-.nav-center {
+.nav-center { /* Menú de navegación centrado */
   display: flex;
   gap: 15px;
   flex: 1;
@@ -38,12 +38,12 @@
   margin-left: 380px;
 }
 
-.user-actions {
+.user-actions { /* Acciones de usuario a la derecha */
   display: flex;
   gap: 10px;
 }
 
-.nav-btn {
+.nav-btn {  /* Botón de la barra de navegación */
   background: transparent;
   border: 1px solid #ffeba7;
   border-radius: 4px;
@@ -54,32 +54,30 @@
   transition: 0.2s;
 }
 
-.nav-btn:hover {
+.nav-btn:hover { /* Efecto hover en botón */
   background-color: #ffeba7;
   color: #2a2b38;
 }
 
-.menu-container {
+.menu-container {  /* Contenedor principal del menú */
   padding: 2rem;
-  display: flex;
-  justify-content: center;
+  text-align: center;
 }
 
-.menu-title {
+.menu-title { /* Título del menú */
   font-size: 2rem;
   margin-bottom: 1.5rem;
   font-weight: 600;
-  text-align: center; /* Aseguramos que el título esté centrado */
 }
 
-.product-grid {
+.product-grid { /* Grid de productos */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 1.5rem;
   justify-items: center;
 }
 
-.product-card {
+.product-card { /* Tarjeta individual de producto */
   background-color: #1e1e1e;
   border-radius: 12px;
   overflow: hidden;
@@ -90,38 +88,44 @@
   flex-direction: column;
 }
 
-.product-card:hover {
+.product-card:hover { /* Efecto hover en tarjeta */
   transform: scale(1.03);
 }
 
-.product-img {
+.product-img { /* Imagen del producto */
   width: 100%;
   height: 180px;
   object-fit: cover;
 }
 
-.product-info {
-  flex: 1;
+.product-info {  /* Información del producto */
+  flex: 1; 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; 
   padding: 1rem;
 }
-.product-footer {
-  margin-top: auto;
+.product-footer { /* Pie de la tarjeta de producto */
+  margin-top: auto; 
 }
-.product-name {
+.product-name { /* Nombre del producto */
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
 
-.product-desc {
+.product-desc { /* Descripción del producto */
   font-size: 0.9rem;
   color: #ccc;
   margin-bottom: 0.5rem;
 }
 
-.add-cart-btn {
+.product-price { /* Precio del producto */
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffcc00;
+  margin-bottom: 10px;
+}
+.add-cart-btn { /* Botón para agregar al carrito */
   background-color: #ffeba7;
   border: none;
   color: #2a2b38;
@@ -130,42 +134,13 @@
   border-radius: 4px;
   cursor: pointer;
   margin-top: auto;
-  width: 100%;
+  width: 100%; 
   transition: 0.2s;
 }
 
-.add-cart-btn:hover {
+.add-cart-btn:hover { /* Efecto hover en botón */
   background-color: #2a2b38;
   color: #ffeba7;
 }
 
-/* --- MEDIA QUERIES PARA EL PANEL DE ADMIN --- */
 
-@media (max-width: 768px) {
-  .navbar {
-    height: auto;
-    flex-direction: column;
-    padding: 15px;
-    gap: 15px;
-  }
-
-  .logo-img {
-    position: static; /* Hacemos que el logo se comporte como un elemento normal */
-    height: 80px;
-    margin-bottom: 10px;
-  }
-
-  .nav-center {
-    margin-left: 0;
-    order: 3; /* Mueve las acciones de usuario al final */
-  }
-  
-  .user-actions {
-    order: 2; /* Mueve el botón de cerrar sesión debajo del logo */
-  }
-
-  .menu-container {
-    padding: 1rem;
-    flex-direction: column; /* Apila título y grid verticalmente */
-  }
-}
