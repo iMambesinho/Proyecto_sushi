@@ -5,86 +5,90 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { CarritoService } from '../carrito/carrito.service';
-//  Importamos el servicio 
-import { ProductoService, Producto } from '../producto';
+// 1. 🟢 Importación corregida: Asegúrate de que la ruta sea correcta (ej: '../table.service')
+import { TableService, Table } from '../tablas';
 
 
 @Component({ 
- selector: 'app-tablas',
- standalone: true,
- imports: [CommonModule],
- templateUrl: './tablas.component.html',
- styleUrls: ['./tablas.component.css']
+selector: 'app-tablas',
+standalone: true,
+imports: [CommonModule],
+templateUrl: './tablas.component.html',
+styleUrls: ['./tablas.component.css']
 })
 export class TablasComponent implements OnInit { 
- currentUser: any;
+currentUser: any;
 
-  //  Ahora toma los datos de la API
- productos: Producto[] = []; 
- 
- constructor(
-    private router: Router, 
-    private carritoService: CarritoService,
-    private productoService: ProductoService, 
-    private cd: ChangeDetectorRef 
-  ) {}
+ // 2. 🟢 Propiedad de datos renombrada a 'tablas' (para que sea coherente con el HTML)
+tablas: Table[] = []; 
 
- agregarAlCarrito(producto: Producto) { 
-   this.carritoService.agregar(producto, this.currentUser.email);
-   alert(`${producto.nombre} agregado al carrito`);
-  }
+constructor(
+ private router: Router, 
+ private carritoService: CarritoService,
+ // 3. 🟢 Inyección renombrada a 'tableService' (y tipado correcto)
+ private tableService: TableService, 
+ private cd: ChangeDetectorRef 
+ ) {}
 
- ngOnInit() { 
- const user = localStorage.getItem('currentUser');
- if (!user) {
- this.router.navigate(['/login']); 
- } else {
- this.currentUser = JSON.parse(user);
-      //  Llamamos a la función de carga
-      this.cargarProductos();
- }
+ // 4. 🟢 Función para agregar, usando el tipo 'Table' y la variable 'tabla'
+agregarAlCarrito(tabla: Table) { 
+this.carritoService.agregar(tabla, this.currentUser.email);
+// ⚠️ Reemplazamos alert por console.log o un modal personalizado
+console.log(`Tabla: ${tabla.nombre} agregado al carrito`);
  }
 
-  //  FUNCIÓN DE CARGA IDÉNTICA A LA DE HOME
-  cargarProductos() {
- this.productoService.getProductos().subscribe({
- next: (data) => {
- this.productos = data;
-        // Forzar la actualización de la vista
- this.cd.detectChanges(); 
- console.log('TablasComponent: Productos cargados y detección de cambios forzada.');
- },
- error: (err) => console.error('Error al cargar productos en Tablas:', err)
- });
- }
+ngOnInit() { 
+const user = localStorage.getItem('currentUser');
+if (!user) {
+this.router.navigate(['/login']); 
+} else {
+this.currentUser = JSON.parse(user);
+   // 5. 🟢 Llamamos a la función de carga renombrada
+   this.cargarTablas();
+}
+}
 
- logout() { 
- localStorage.removeItem('currentUser');
- this.router.navigate(['/login']);
- }
+ // 6. 🟢 FUNCIÓN DE CARGA: Renombrada y usando el TableService
+ cargarTablas() {
+this.tableService.getTables().subscribe({ // Usamos el método getTables()
+next: (data) => {
+// 7. 🟢 Asignamos los datos a la propiedad 'tablas'
+this.tablas = data; 
 
- goToProfile() { 
- alert('Ir al perfil de ' + this.currentUser?.email);
- }
+this.cd.detectChanges(); 
+console.log('TablasComponent: Tablas cargadas y detección de cambios forzada.');
+},
+error: (err) => console.error('Error al cargar tablas:', err)
+});
+}
 
- goHome() { 
- this.router.navigate(['/home']);
- }
+logout() { 
+localStorage.removeItem('currentUser');
+this.router.navigate(['/login']);
+}
+goToProfile() { 
+// ⚠️ Reemplazamos alert por console.log o un modal personalizado
+console.log('Ir al perfil de ' + this.currentUser?.email);
+}
 
- goPromociones() { 
- this.router.navigate(['/promociones']);
- }
+goHome() { 
+this.router.navigate(['/home']);
+}
 
- goTablas() { 
- this.router.navigate(['/tablas']);
- }
+goPromociones() { 
+this.router.navigate(['/promociones']);
+}
 
- goToCart() { 
- this.router.navigate(['/carrito']);
- }
+goTablas() { 
+this.router.navigate(['/tablas']);
+}
 
- goProfiles(){ 
- this.router.navigate(['/profiles']);
- } 
+goToCart() { 
+this.router.navigate(['/carrito']);
+}
+
+goProfiles(){ 
+this.router.navigate(['/profiles']);
+} 
 
 }

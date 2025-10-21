@@ -20,7 +20,7 @@
   <h2 class="menu-title">Tablas</h2> <!-- clase menu-title para el título del menú -->
 
   <div class="product-grid"> <!-- clase product-grid para la cuadrícula de productos -->
-    <div class="product-card" *ngFor="let item of productos"> <!-- clase product-card para cada tarjeta de producto -->
+    <div class="product-card" *ngFor="let item of tablas"> <!-- clase product-card para cada tarjeta de producto -->
       <img [src]="item.imagenUrl" alt="{{ item.nombre }}" class="product-img" /> <!-- clase product-img para la imagen del producto -->
       <div class="product-info"> <!-- clase product-info para la información del producto -->
         <h3 class="product-name">{{ item.nombre }}</h3> <!-- clase product-name para el nombre del producto -->

@@ -1,38 +1,32 @@
-<!-- Barra de navegación superior -->
-<header class="navbar">      
-  <!-- Logo posicionado arriba a la izquierda -->
-  <div class="brand" (click)="goHome()"> 
+<header class="navbar"> <!-- Barra de navegación superior -->
+  <div class="brand" (click)="goHome()"> <!-- Logo principal, clic para ir a Home -->
     <img src="https://i.imgur.com/RHgjzLI.png" alt="Logo del local" class="logo-img">
   </div>
 
-  <!-- Menú de navegación centrado -->
-  <nav class="nav-center">
+  <nav class="nav-center"> <!-- Menú de navegación centrado -->
     <button class="nav-btn" (click)="goHome()">Home</button>
     <button class="nav-btn" (click)="goPromociones()">Promociones</button>
     <button class="nav-btn" (click)="goTablas()">Tablas</button>
   </nav>
 
-  <!-- Acciones de usuario alineadas a la derecha -->
-  <div class="user-actions">
+  <div class="user-actions"> <!-- Acciones de usuario a la derecha -->
     <button class="nav-btn" (click)="goToProfile()">Hi, {{ currentUser?.email }}</button>
     <button class="nav-btn cart-btn" (click)="goToCart()">🛒 Carrito</button>
     <button class="nav-btn" (click)="logout()">Cerrar sesión</button>
   </div>
 </header>
-<!-- Contenedor principal del menú de promociones -->
-<div class="menu-container">
-  <h2 class="menu-title">Promociones</h2><!-- Título principal -->
 
-  <!-- Grid de productos en promoción -->
-  <div class="product-grid">
-    <!-- Tarjeta individual de producto -->
-    <div class="product-card" *ngFor="let item of productos">
-      <img [src]="item.imagenUrl" alt="{{ item.nombre }}" class="product-img" /><!-- Imagen del producto -->
+<div class="menu-container"> <!-- Contenedor principal del menú -->
+  <h2 class="menu-title">Promociones</h2> <!-- Título principal -->
+
+  <div class="product-grid"> <!-- Grid de productos -->
+    <div class="product-card" *ngFor="let item of promociones"> <!-- Tarjeta individual de producto -->
+      <img [src]="item.imagenUrl" alt="{{ item.nombre }}" class="product-img" /> <!-- Imagen del producto -->
       <div class="product-info">
         <h3 class="product-name">{{ item.nombre }}</h3> <!-- Nombre del producto -->
         <p class="product-desc">{{ item.descripcion }}</p> <!-- Descripción del producto -->
         <div class="product-footer">
-        <span class="product-price">${{ item.precio }}</span> <!-- Precio -->
+        <span class="product-price">${{ item.precio }}</span> <!-- Precio del producto -->
         <button class="nav-btn add-cart-btn" (click)="agregarAlCarrito(item)">
       🛒 Agregar al Carrito
     </button> <!-- Botón para agregar al carrito -->
